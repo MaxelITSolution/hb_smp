@@ -78,7 +78,7 @@
 			</a>
 		</div>
 		<div class="col-md-9 detail">
-			<?php 
+			<?php
 				$title = 'title_' . $language;
 				$content = 'content_' . $language;
 			?>

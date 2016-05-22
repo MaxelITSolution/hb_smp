@@ -94,13 +94,17 @@
 			<img class="main-image" src="<?php echo site_url('assets/front/images/content/profile-pabrik bawah.jpg'); ?>">
 		</div>
 		<div class="col-md-6 box-1">
+            <h3><?php echo $static_content[69]->value; ?></h3>
+			<p><?php echo $static_content[70]->value; ?></p>
+            <h3><?php echo $static_content[71]->value; ?></h3>
+			<p><?php echo $static_content[72]->value; ?></p>
 			<h3><?php echo $static_content[34]->value; ?></h3>
 			<p><?php echo $static_content[35]->value; ?></p>
 			<h3><?php echo $static_content[36]->value; ?></h3>
 			<p>
 				<ul>
 					<?php foreach(explode(';', $static_content[37]->value) as $value) { ?>
-						<li><?php echo $value; ?></li>
+						<li style="margin-top: -10px;"><?php echo $value; ?></li>
 					<?php } ?>
 				</ul>
 			</p>

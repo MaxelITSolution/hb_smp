@@ -80,7 +80,7 @@
                         <div class="col-md-12 no-padding"><?php echo nl2br($static_content[59]->value); ?></div>
                     </div>
                 </div>
-                <div class="col-md-5 box-3">
+                <div class="col-md-5 box-3" style="margin-top: -40px;">
                     <div class="col-md-12 no-padding text-right social-media">
                         <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img src="<?php echo site_url('assets/front/images/facebook2.png'); ?>"></a>
                         <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img src="<?php echo site_url('assets/front/images/twitter2.png'); ?>"></a>
