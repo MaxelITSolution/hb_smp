@@ -54,7 +54,7 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-5 no-padding box-1">
 			<h3>
-				<span><?php echo $static_content[53]->value; ?></span>
+				<span><?php $qwe = explode(';',$static_content[53]->value; ?></span>
 				<section class="dot-contact-2"></section>
 			</h3>
 			<?php echo $static_content[54]->value; ?>

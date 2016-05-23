@@ -1,0 +1,33 @@
+@media screen and (min-width: 320px){
+    #white_background_right_content_title{
+        text-align: left;;
+    }
+    #white_background_right_content_desc{
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 677px){
+    #white_background_right_content{
+        margin-left: 270px;
+        margin-top: 150px;
+    }
+}
+
+@media screen and (min-width: 678px) and (max-width: 899px){
+    #white_background_right_content{
+        margin-left: 350px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px){
+    #white_background_right_content{
+        margin-left: 350px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1300px){
+    #white_background_right_content{
+        margin-left: 500px;
+    }
+}

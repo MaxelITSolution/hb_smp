@@ -37,7 +37,7 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-9 slide-text wp-slide-profile">
+		<div class="col-md-3 col-md-offset-9 slide-text wp-slide-profile" style="margin-top: 320px;">
 			<section class="dot-home-1"></section>
 			<div class="slide-profile">
 				<h2><?php echo $static_content[2]->value; ?></h2>
@@ -46,12 +46,12 @@
 		</div>
 	</div>
 </section>
-<section class="col-md-12 section-1 no-padding">
+<section class="col-md-12 section-1 no-padding" style="margin-top: -20px;">
 	<div class="col-md-12 background">
 		<div class="container">
 			<div class="col-md-6 box-1">
 				<h1><?php echo $static_content[4]->value; ?></h1>
-				<p><?php echo $static_content[5]->value; ?></p>
+				<p style="font-size: 18px;"><?php echo $static_content[5]->value; ?></p>
 				<div class="col-md-12 no-padding text-right"><?php echo $static_content[6]->value; ?></div>
 			</div>
 			<div class="col-md-6 box-2">
@@ -119,9 +119,9 @@
 					<a class="single_image" href="<?php echo site_url('product?detail=' . $product->id); ?>#product-section">
 						<div class="col-md-4 col-sm-6">
 							<img src="<?php echo site_url('uploads/' . $product->image_name); ?>">
-							<?php 
+							<?php
 								$product_name = 'name_' . $language;
-								echo strtoupper($product->$product_name); 
+								echo strtoupper($product->$product_name);
 							?>
 						</div>
 					</a>
@@ -146,9 +146,9 @@
 						</div>
 						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>" class="title-link">
 							<p>
-								<?php 
+								<?php
 									$title = 'title_' . $language;
-									echo strtoupper($post->$title); 
+									echo strtoupper($post->$title);
 								?>
 							</p>
 						</a>

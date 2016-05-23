@@ -6,6 +6,7 @@
         <meta charset="utf-8"></meta>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/front/css/mc/profile.css" type="text/css" />
         <!-- CSS ASSETS -->
         <?php foreach ($css_assets as $key => $value) { ?>
             <link media="all" type="text/css" rel="stylesheet" href="<?php echo site_url($value); ?>">
@@ -80,14 +81,14 @@
                         <div class="col-md-12 no-padding"><?php echo nl2br($static_content[59]->value); ?></div>
                     </div>
                 </div>
-                <div class="col-md-5 box-3" style="margin-top: -40px;">
+                <div class="col-md-5 box-3" style="margin-top: -22px;">
                     <div class="col-md-12 no-padding text-right social-media">
                         <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img src="<?php echo site_url('assets/front/images/facebook2.png'); ?>"></a>
                         <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img src="<?php echo site_url('assets/front/images/twitter2.png'); ?>"></a>
                         <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
                     </div>
                     <div class="col-md-12 no-padding text-right">
-                         &copy; <?php echo date("Y"); ?> PT. Sarimas Permai. All rights reserved. Term and Condition Apply
+                         &copy; <?php echo date("Y"); ?> PT. Sarimas Permai. All rights reserved. Terms and Conditions Apply
                     </div>
                 </div>
             </div>

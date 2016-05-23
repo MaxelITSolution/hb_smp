@@ -37,10 +37,10 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-profile">
+		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-profile" id="white_background_right_content">
 			<div class="slide-profile">
-				<h2><?php echo $static_content[26]->value; ?></h2>
-				<div class="col-md-12 no-padding"><?php echo $static_content[27]->value; ?></div>
+				<h2 id="white_background_right_content_title"><?php echo $static_content[26]->value; ?></h2>
+				<div class="col-md-12 no-padding" id="white_background_right_content_desc"><?php echo $static_content[27]->value; ?></div>
 			</div>
 		</div>
 	</div>
@@ -54,11 +54,8 @@
 			<a target="blank" href="<?php echo $static_content[53]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
 		</div>
 		<div class="col-md-6 box-2">
-			<h3>
-				<span><?php echo $static_content[28]->value; ?> <a target="blank" href="<?php echo $pdf_download; ?>" title="Download"><button><i class="fa fa-download "></i> e-company profile</button></a></span>
-				<section class="dot-profile-1"></section>
-			</h3>
-			<p><?php echo $static_content[29]->value; ?></p>
+            <?php echo $static_content[28]->value; ?>
+			<?php echo $static_content[29]->value; ?>
 			<a href="<?php echo site_url('expertise'); ?>">WHY YOU SHOULD CHOOSE US <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 		</div>
 	</div>
@@ -95,13 +92,13 @@
 		</div>
 		<div class="col-md-6 box-1">
             <h3><?php echo $static_content[69]->value; ?></h3>
-			<p><?php echo $static_content[70]->value; ?></p>
-            <h3><?php echo $static_content[71]->value; ?></h3>
-			<p><?php echo $static_content[72]->value; ?></p>
-			<h3><?php echo $static_content[34]->value; ?></h3>
-			<p><?php echo $static_content[35]->value; ?></p>
-			<h3><?php echo $static_content[36]->value; ?></h3>
-			<p>
+			<p style="margin-top: -10px;"><?php echo $static_content[70]->value; ?></p>
+            <h3  style="margin-top: -20px;"><?php echo $static_content[71]->value; ?></h3>
+			<p style="margin-top: -10px;"><?php echo $static_content[72]->value; ?></p>
+			<h3 style="margin-top: -20px;"><?php echo $static_content[34]->value; ?></h3>
+			<p style="margin-top: -10px; line-height:20px;"><?php echo $static_content[35]->value; ?></p>
+			<h3 style="margin-top: -20px;"><?php echo $static_content[36]->value; ?></h3>
+			<p style="margin-top: -10px;">
 				<ul>
 					<?php foreach(explode(';', $static_content[37]->value) as $value) { ?>
 						<li style="margin-top: -10px;"><?php echo $value; ?></li>

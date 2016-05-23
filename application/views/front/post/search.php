@@ -67,7 +67,7 @@
 							<div class="date"><?php echo strtoupper(date("d", strtotime($post->created_at))); ?></div>
 							<div class="month-year"><?php echo strtoupper(date("F Y", strtotime($post->created_at))); ?></div>
 						</div>
-						<?php 
+						<?php
 							$title = 'title_' . $language;
 							$content = 'content_' . $language;
 						?>
@@ -88,7 +88,7 @@
 	<?php } else { ?>
 		<div class="container">
 			<div class="col-md-12">
-				<h4><?php echo $static_content[67]->value; ?></h4>
+				<h4 style="font-weight: bold;"><?php echo $static_content[67]->value; ?></h4>
 				<span><?php echo $static_content[68]->value; ?></span>
 			</div>
 		</div>

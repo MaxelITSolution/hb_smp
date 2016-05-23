@@ -56,7 +56,7 @@
 		<div class="col-md-3 box-1">
 			<h3>
 				<section class="dot-news-2"></section>
-				<span>CATEGORIES</span><img src="<?php echo site_url('assets/front/images/arrow.png'); ?>" style="width: 22px; margin-top: -5px; margin-left: 69px;">
+				<span>CATEGORIES</span>
 			</h3>
 			<a href="<?php echo site_url('post/category/1'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding news <?php echo $category == 1 ? 'active-news' : '' ?>">

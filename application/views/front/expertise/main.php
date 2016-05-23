@@ -37,11 +37,11 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-expertise">
+		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-expertise" style="margin-left: 650px;">
 			<section class="dot-expertise-1"></section>
 			<div class="slide-profile">
 				<h3><?php echo $static_content[40]->value; ?></h3>
-				<div class="col-md-12 no-padding">
+				<div class="col-md-12 no-padding" style="width: 500px;">
 					<?php echo $static_content[41]->value; ?>
 				</div>
 			</div>
