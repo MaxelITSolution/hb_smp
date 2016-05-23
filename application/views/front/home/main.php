@@ -33,14 +33,24 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-9 slide-text wp-slide-profile" style="margin-top: 320px;">
+		<div class="col-md-3 col-md-offset-9 slide-text wp-slide-profile" id="content_white_right_top">
 			<section class="dot-home-1"></section>
 			<div class="slide-profile">
-				<h2><?php echo $static_content[2]->value; ?></h2>
+                <?php
+                    if ($language=="rus"){?>
+                        <h2 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                <?php } else if ($language=="kor") { ?>
+                        <h2 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                <?php } else if ($language=="chn") { ?>
+                        <h2 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                <?php } else { ?>
+                        <h2><?php echo $static_content[2]->value; ?></h2>
+                <?php }
+                 ?>
 				<div class="col-md-12 no-padding"><?php echo $static_content[3]->value; ?></div>
 			</div>
 		</div>
@@ -78,8 +88,8 @@
 			<p><?php echo $static_content[11]->value; ?></p>
 		</div>
 		<div class="col-md-3 col-md-offset-2 box-2">
-			<p><img src="<?php echo site_url('assets/front/images/map-1.png'); ?>"> Distributed Area</p>
-			<p><img src="<?php echo site_url('assets/front/images/map-2.png'); ?>"> Future Distributed Area</p>
+			<p><img src="<?php echo site_url('assets/front/images/map-1.png'); ?>"> <?php echo $static_content[84]->value; ?></p>
+			<p><img src="<?php echo site_url('assets/front/images/map-2.png'); ?>"> <?php echo $static_content[85]->value; ?></p>
 		</div>
 	</div>
 </section>
@@ -107,7 +117,7 @@
 				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-4.jpg'); ?>">
 				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-5.jpg'); ?>">
 				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-6.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.jpg'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.jpg'); ?>" style="margin-left: -15px;">
 			</div>
 			<div class="col-md-6 box-1">
 				<h3><?php echo $static_content[14]->value; ?></h3>
@@ -133,7 +143,7 @@
 <section class="col-md-12 section-5">
 	<div class="container">
 		<h3>
-			<span>NEWS AND EVENTS</span>
+			<span><?php echo $static_content[89]->value; ?></span>
 			<section class="dot-home-4"></section>
 		</h3>
 		<div class="col-md-12 no-padding">
@@ -154,7 +164,7 @@
 						</a>
 						<a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ <?php echo strtoupper($post->category_name); ?> ]</span></a>
 						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
-						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>">Read more <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 					</div>
 				<?php } ?>
 			</div>

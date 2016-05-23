@@ -70,25 +70,28 @@
         <?php $this->load->view($subview) ?>
         <section class="col-md-12 footer">
             <div class="container">
-                <div class="col-md-7">
+                <div class="col-md-6">
                     <div class="col-md-6 box-1">
-                        <h3>CONTACT</h3>
+                        <h3 style="font-family: Gotham;">CONTACT</h3>
                     </div>
                     <div class="col-md-6 box-2">
-                        <div class="col-md-12 no-padding"><?php echo nl2br($static_content[56]->value); ?></div>
-                        <div class="col-md-12 no-padding"><?php echo nl2br($static_content[57]->value); ?></div>
-                        <div class="col-md-12 no-padding"><?php echo nl2br($static_content[58]->value); ?></div>
-                        <div class="col-md-12 no-padding"><?php echo nl2br($static_content[59]->value); ?></div>
+                        <div class="col-md-12 no-padding"><p style="font-family: Gotham-Light;" >
+                            <?php echo nl2br($static_content[56]->value);  ?>
+                        </p></div>
+                        <div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo nl2br($static_content[57]->value); ?></p></div>
+                        <div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo nl2br($static_content[58]->value); ?></p></div>
+                        <div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo nl2br($static_content[59]->value); ?></p></div>
                     </div>
                 </div>
-                <div class="col-md-5 box-3" style="margin-top: -22px;">
+                <div class="col-md-6 box-3" style="margin-top: -22px;">
                     <div class="col-md-12 no-padding text-right social-media">
                         <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img src="<?php echo site_url('assets/front/images/facebook2.png'); ?>"></a>
                         <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img src="<?php echo site_url('assets/front/images/twitter2.png'); ?>"></a>
                         <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
                     </div>
-                    <div class="col-md-12 no-padding text-right">
-                         &copy; <?php echo date("Y"); ?> PT. Sarimas Permai. All rights reserved. Terms and Conditions Apply
+                    <div class="col-md-12 no-padding text-right"><p style="font-family: Gotham-Light;" >
+                        &copy; <?php echo date("Y"); ?> Sarimas Permai. All rights reserved. Terms and Conditions Apply
+                    </p>
                     </div>
                 </div>
             </div>

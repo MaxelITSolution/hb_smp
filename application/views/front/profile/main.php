@@ -33,13 +33,23 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu_normal'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-profile" id="white_background_right_content">
 			<div class="slide-profile">
-				<h2 id="white_background_right_content_title"><?php echo $static_content[26]->value; ?></h2>
+                <?php
+                    if ($language=="rus"){?>
+                        <h2 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[26]->value; ?></h2>
+                <?php } else if ($language=="kor") { ?>
+                        <h2 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[26]->value; ?></h2>
+                <?php } else if ($language=="chn") { ?>
+                        <h2 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[26]->value; ?></h2>
+                <?php } else { ?>
+                        <h2><?php echo $static_content[26]->value; ?></h2>
+                <?php }
+                 ?>
 				<div class="col-md-12 no-padding" id="white_background_right_content_desc"><?php echo $static_content[27]->value; ?></div>
 			</div>
 		</div>
@@ -56,7 +66,7 @@
 		<div class="col-md-6 box-2">
             <?php echo $static_content[28]->value; ?>
 			<?php echo $static_content[29]->value; ?>
-			<a href="<?php echo site_url('expertise'); ?>">WHY YOU SHOULD CHOOSE US <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+			<a href="<?php echo site_url('expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 		</div>
 	</div>
 </section>
@@ -66,7 +76,19 @@
 		<div class="col-md-6 box-1">
 			<div class="col-md-12 no-padding">
 				<h3><?php echo $static_content[30]->value; ?></h3>
-				<p><?php echo $static_content[31]->value; ?></p>
+                <?php
+                    if ($language=="eng"){?>
+                        <p style="text-align: justify;"><?php echo $static_content[31]->value; ?></p>
+                <?php } else if ($language=="ina") { ?>
+                        <p style="width: 470px; text-align: justify; line-height: 25px;"><?php echo $static_content[31]->value; ?></p>
+                <?php } else if ($language=="chn") { ?>
+                        <p style="width: 320px; text-align: justify; line-height: 30px;"><?php echo $static_content[31]->value; ?></p>
+                <?php } else if ($language=="kor") { ?>
+                        <p style="width: 320px; text-align: justify; line-height: 30px;"><?php echo $static_content[31]->value; ?></p>
+                <?php } else if ($language=="rus") { ?>
+                        <p style="width: 420px; text-align: justify; line-height: 25px;"><?php echo $static_content[31]->value; ?></p>
+                <?php }
+                 ?>
 			</div>
 			<div class="col-md-12 no-padding company-value">
 				<h3><?php echo $static_content[32]->value; ?></h3>

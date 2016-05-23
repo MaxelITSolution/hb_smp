@@ -33,7 +33,7 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu_normal'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 		<div class="col-md-3 box-1">
 			<h3>
 				<section class="dot-news-2"></section>
-				<span>CATEGORIES</span>
+				<span><?php echo $static_content[92]->value; ?></span>
 			</h3>
 			<a href="<?php echo site_url('post/category/1'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding news <?php echo $category == 1 ? 'active-news' : '' ?>">

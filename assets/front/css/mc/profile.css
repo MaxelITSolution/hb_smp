@@ -26,8 +26,23 @@
     }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1300px){
+@media screen and (min-width: 1024px) and (max-width: 1299px){
     #white_background_right_content{
         margin-left: 500px;
+    }
+    #content_white_right_top{
+        margin-top: 360px;
+    }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400px){
+    #content_white_right_top{
+        margin-top: 350px;
+    }
+}
+
+@media screen and (min-width: 1401px){
+    #content_white_right_top{
+        margin-top: 370px;
     }
 }

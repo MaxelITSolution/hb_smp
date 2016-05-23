@@ -33,18 +33,28 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu_normal'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 		<div class="col-md-3 col-md-offset-9 slide-text slide-contact wp-slide-profile">
 			<section class="dot-contact-1"></section>
 			<div class="slide-profile">
-				<h2><?php echo $static_content[53]->value; ?></h2>
-				<div class="col-md-12 no-padding"><?php echo $static_content[56]->value; ?></div>
-				<div class="col-md-12 no-padding"><?php echo $static_content[57]->value; ?></div>
-				<div class="col-md-12 no-padding"><?php echo $static_content[58]->value; ?></div>
-				<div class="col-md-12 no-padding"><?php echo $static_content[59]->value; ?></div>
+                <?php
+                    if ($language=="rus"){?>
+                        <h2 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[53]->value; ?></h2>
+                <?php } else if ($language=="kor") { ?>
+                        <h2 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[53]->value; ?></h2>
+                <?php } else if ($language=="chn") { ?>
+                        <h2 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[53]->value; ?></h2>
+                <?php } else { ?>
+                        <h2><?php echo $static_content[53]->value; ?></h2>
+                <?php }
+                 ?>
+				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[87]->value; ?></p></div>
+				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[57]->value; ?></p></div>
+				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[58]->value; ?></p></div>
+				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[59]->value; ?></p></div>
 			</div>
 		</div>
 	</div>
@@ -54,8 +64,8 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-5 no-padding box-1">
 			<h3>
-				<span><?php $qwe = explode(';',$static_content[53]->value; ?></span>
-				<section class="dot-contact-2"></section>
+				<span><?php echo $static_content[88]->value; ?></span>
+				<section class="dot-contact-2" style="margin-right: -20px;"></section>
 			</h3>
 			<?php echo $static_content[54]->value; ?>
 		</div>

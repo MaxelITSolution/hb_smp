@@ -38,12 +38,12 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 		<div class="col-md-6 search-text">
-			<h2>SEARCH RESULT</h2>
+			<h2><?php echo $static_content[93]->value; ?></h2>
 			<?php if (!empty($posts)) { ?>
 				<div class="col-md-12 no-padding">YOUR SEARCH FOR "<?php echo $key; ?>" HAS <?php echo count($posts); ?> MATCHES</div>
 			<?php } else { ?>

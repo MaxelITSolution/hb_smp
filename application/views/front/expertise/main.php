@@ -33,14 +33,24 @@
 		<div class="col-md-12">
 			<?php $this->load->view('front/components/menu_normal'); ?>
 			<div class="col-md-3 no-padding">
-				<input class="search-box" type="text" placeholder="Search...">
+				<input class="search-box" type="text" placeholder="<?php echo $static_content[94]->value; ?>">
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
 		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-expertise" style="margin-left: 650px;">
 			<section class="dot-expertise-1"></section>
 			<div class="slide-profile">
-				<h3><?php echo $static_content[40]->value; ?></h3>
+                <?php
+                    if ($language=="rus"){?>
+                        <h3 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[40]->value; ?></h3>
+                <?php } else if ($language=="kor") { ?>
+                        <h3 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[40]->value; ?></h3>
+                <?php } else if ($language=="chn") { ?>
+                        <h3 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[40]->value; ?></h3>
+                <?php } else { ?>
+                        <h3><?php echo $static_content[40]->value; ?></h3>
+                <?php }
+                 ?>
 				<div class="col-md-12 no-padding" style="width: 500px;">
 					<?php echo $static_content[41]->value; ?>
 				</div>
