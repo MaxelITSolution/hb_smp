@@ -39,7 +39,17 @@
 		</div>
 		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-news">
 			<div class="slide-profile">
-				<h2><?php echo $static_content[48]->value; ?></h2>
+                <?php
+                    if ($language=="rus"){?>
+                        <h2 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[48]->value; ?></h2>
+                <?php } else if ($language=="kor") { ?>
+                        <h2 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[48]->value; ?></h2>
+                <?php } else if ($language=="chn") { ?>
+                        <h2 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[48]->value; ?></h2>
+                <?php } else { ?>
+                        <h2><?php echo $static_content[48]->value; ?></h2>
+                <?php }
+                 ?>
 				<div class="col-md-12 no-padding"><?php echo $static_content[49]->value; ?></div>
 			</div>
 		</div>
@@ -61,19 +71,49 @@
 			<a href="<?php echo site_url('post/category/1'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding news <?php echo $category == 1 ? 'active-news' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-1.png'); ?>">
-					<span>NEWS</span>
+                    <?php
+                        if ($language=="rus"){?>
+                            <span style="font-family: Arial; font-weight: bold;"><?php echo $static_content[95]->value; ?></span>
+                    <?php } else if ($language=="kor") { ?>
+                            <span style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[95]->value; ?></span>
+                    <?php } else if ($language=="chn") { ?>
+                            <span style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[95]->value; ?></span>
+                    <?php } else { ?>
+                            <span><?php echo $static_content[95]->value; ?></span>
+                    <?php }
+                     ?>
 				</div>
 			</a>
 			<a href="<?php echo site_url('post/category/2'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding events <?php echo $category == 2 ? 'active-events' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-2.png'); ?>">
-					<span>EVENTS</span>
+                    <?php
+                        if ($language=="rus"){?>
+                            <span style="font-family: Arial; font-weight: bold;"><?php echo $static_content[96]->value; ?></span>
+                    <?php } else if ($language=="kor") { ?>
+                            <span style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[96]->value; ?></span>
+                    <?php } else if ($language=="chn") { ?>
+                            <span style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[96]->value; ?></span>
+                    <?php } else { ?>
+                            <span><?php echo $static_content[96]->value; ?></span>
+                    <?php }
+                     ?>
 				</div>
 			</a>
 			<a href="<?php echo site_url('post/category/3'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding articles <?php echo $category == 3 ? 'active-articles' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-3.png'); ?>">
-					<span>ARTICLES</span>
+                    <?php
+                        if ($language=="rus"){?>
+                            <span style="font-family: Arial; font-weight: bold;"><?php echo $static_content[97]->value; ?></span>
+                    <?php } else if ($language=="kor") { ?>
+                            <span style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[97]->value; ?></span>
+                    <?php } else if ($language=="chn") { ?>
+                            <span style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[97]->value; ?></span>
+                    <?php } else { ?>
+                            <span><?php echo $static_content[97]->value; ?></span>
+                    <?php }
+                     ?>
 				</div>
 			</a>
 		</div>
@@ -89,7 +129,7 @@
 						$content = 'content_' . $language;
 					?>
 					<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><p><?php echo strtoupper($post->$title); ?></p></a>
-					<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url('post/detail/' . $post->slug); ?>">Read more</a></span>
+					<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?></a></span>
 				</div>
 			<?php } ?>
 			<!-- <ul>

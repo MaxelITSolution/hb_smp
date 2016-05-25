@@ -48,7 +48,7 @@
                 <?php } else if ($language=="chn") { ?>
                         <h3 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[40]->value; ?></h3>
                 <?php } else { ?>
-                        <h3><?php echo $static_content[40]->value; ?></h3>
+                        <h3 style="line-height: 25px;"><?php echo $static_content[40]->value; ?></h3>
                 <?php }
                  ?>
 				<div class="col-md-12 no-padding" style="width: 500px;">

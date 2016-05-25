@@ -162,7 +162,46 @@
 								?>
 							</p>
 						</a>
-						<a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ <?php echo strtoupper($post->category_name); ?> ]</span></a>
+                        <?php
+                            $cat = strtoupper($post->category_name);
+                            if ($cat=="NEWS"){
+                                if ($language=="rus"){ ?>
+						                <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ Новости ]</span></a>
+                                <?php } else if ($language=="eng"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ NEWS ]</span></a>
+                                <?php } else if ($language=="ina"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ BERITA ]</span></a>
+                                <?php } else if ($language=="chn"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 消息 ]</span></a>
+                                <?php } else if ($language=="kor"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 뉴스 ]</span></a>
+                                <?php }
+                            } else if ($cat=="EVENTS"){
+                                if ($language=="rus"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ событие ]</span></a>
+                                <?php } else if ($language=="eng"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ EVENTS ]</span></a>
+                                <?php } else if ($language=="ina"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ EVENT ]</span></a>
+                                <?php } else if ($language=="chn"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 事件 ]</span></a>
+                                <?php } else if ($language=="kor"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 이벤트 ]</span></a>
+                                <?php }
+                            } else if ($cat=="ARTICLES"){
+                                if ($language=="rus"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ Статьи ]</span></a>
+                                <?php } else if ($language=="eng"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ ARTICLES ]</span></a>
+                                <?php } else if ($language=="ina"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ ARTIKEL ]</span></a>
+                                <?php } else if ($language=="chn"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 文章 ]</span></a>
+                                <?php } else if ($language=="kor"){ ?>
+                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 기사 ]</span></a>
+                                <?php }
+                            }
+                         ?>
 						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
 						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 					</div>

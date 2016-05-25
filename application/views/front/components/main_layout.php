@@ -90,7 +90,7 @@
                         <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
                     </div>
                     <div class="col-md-12 no-padding text-right"><p style="font-family: Gotham-Light;" >
-                        &copy; <?php echo date("Y"); ?> Sarimas Permai. All rights reserved. Terms and Conditions Apply
+                        &copy; <?php echo date("Y"); ?> Sari Mas Permai. All rights reserved. Terms and Conditions Apply.
                     </p>
                     </div>
                 </div>
