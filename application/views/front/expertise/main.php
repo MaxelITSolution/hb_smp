@@ -2,12 +2,12 @@
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12 no-padding">
-                <img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>">
+                <a href="home"><img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>"></a>
             </div>
             <div class="col-md-12 no-padding social-media-wrapper">
-                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/fb_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/in_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/g+_.png'); ?>"></a>
                 <ul class="language">
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
@@ -37,9 +37,9 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-expertise" style="margin-left: 650px;">
+		<div class="col-md-4 col-md-offset-8 slide-text wp-slide-expertise" style="margin-left: 650px;" id="slider_caption_box_expertise">
 			<section class="dot-expertise-1"></section>
-			<div class="slide-profile">
+			<div class="slide-profile" id="caption_expert_content">
                 <?php
                     if ($language=="rus"){?>
                         <h3 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[40]->value; ?></h3>
@@ -51,7 +51,7 @@
                         <h3 style="line-height: 25px;"><?php echo $static_content[40]->value; ?></h3>
                 <?php }
                  ?>
-				<div class="col-md-12 no-padding" style="width: 500px;">
+				<div class="col-md-12 no-padding" style="width: 500px;" id="caption_expert_content">
 					<?php echo $static_content[41]->value; ?>
 				</div>
 			</div>

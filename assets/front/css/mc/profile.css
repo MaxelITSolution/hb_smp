@@ -10,7 +10,7 @@
 @media screen and (max-width: 677px){
     #white_background_right_content{
         margin-left: 270px;
-        margin-top: 150px;
+        margin-top: 140px;
     }
 }
 
@@ -37,12 +37,6 @@
 
 @media screen and (min-width: 1300px) and (max-width: 1400px){
     #content_white_right_top{
-        margin-top: 350px;
-    }
-}
-
-@media screen and (min-width: 1401px){
-    #content_white_right_top{
-        margin-top: 370px;
+        margin-top: 500px;
     }
 }

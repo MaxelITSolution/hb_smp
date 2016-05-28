@@ -2,12 +2,12 @@
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12 no-padding">
-                <img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>">
+                <a href="home"><img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>"></a>
             </div>
             <div class="col-md-12 no-padding social-media-wrapper">
-                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/fb_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/in_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/g+_.png'); ?>"></a>
                 <ul class="language">
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
@@ -42,13 +42,13 @@
 			<div class="slide-profile">
                 <?php
                     if ($language=="rus"){?>
-                        <h2 style="font-family: Arial; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                        <h2 style="font-family: Arial; font-weight: bold;" id="slide_caption_title"><?php echo $static_content[2]->value; ?></h2>
                 <?php } else if ($language=="kor") { ?>
-                        <h2 style="font-family: Dotum; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                        <h2 style="font-family: Dotum; font-weight: bold;" id="slide_caption_title"><?php echo $static_content[2]->value; ?></h2>
                 <?php } else if ($language=="chn") { ?>
-                        <h2 style="font-family: Simhei; font-weight: bold;"><?php echo $static_content[2]->value; ?></h2>
+                        <h2 style="font-family: Simhei; font-weight: bold;" id="slide_caption_title"><?php echo $static_content[2]->value; ?></h2>
                 <?php } else { ?>
-                        <h2><?php echo $static_content[2]->value; ?></h2>
+                        <h2 id="slide_caption_title"><?php echo $static_content[2]->value; ?></h2>
                 <?php }
                  ?>
 				<div class="col-md-12 no-padding"><?php echo $static_content[3]->value; ?></div>
@@ -88,8 +88,8 @@
 			<p><?php echo $static_content[11]->value; ?></p>
 		</div>
 		<div class="col-md-3 col-md-offset-2 box-2">
-			<p><img src="<?php echo site_url('assets/front/images/map-1.png'); ?>"> <?php echo $static_content[84]->value; ?></p>
-			<p><img src="<?php echo site_url('assets/front/images/map-2.png'); ?>"> <?php echo $static_content[85]->value; ?></p>
+			<p><img src="<?php echo site_url('assets/front/images/map-1.png'); ?>"> <?php echo $static_content[85]->value; ?></p>
+			<p><img src="<?php echo site_url('assets/front/images/map-2.png'); ?>"> <?php echo $static_content[84]->value; ?></p>
 		</div>
 	</div>
 </section>
@@ -111,13 +111,13 @@
 		<div class="col-md-1 no-padding"></div>
 		<div class="col-md-11 no-padding">
 			<div class="col-md-12 certification">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-1.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-2.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-3.jpg'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-1.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-2.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-3.png'); ?>">
 				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-4.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-5.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-6.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.jpg'); ?>" style="margin-left: -15px;">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-5.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-6.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.png'); ?>" style="margin-left: -15px;">
 			</div>
 			<div class="col-md-6 box-1">
 				<h3><?php echo $static_content[14]->value; ?></h3>
@@ -237,7 +237,7 @@
 			items: 1,
 			nav: true,
 			loop: true,
-			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			navText: ['<i class="fa fa-angle-left" id="arrow_left"></i>', '<i class="fa fa-angle-right"></i>'],
 			responsive : {
 			    900 : {
 					items: 4,

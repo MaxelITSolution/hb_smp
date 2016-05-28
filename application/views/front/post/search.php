@@ -2,12 +2,12 @@
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12 no-padding">
-                <img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>">
+                <a href="home"><img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>"></a>
             </div>
             <div class="col-md-12 no-padding social-media-wrapper">
-                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/fb_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/in_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/g+_.png'); ?>"></a>
                 <ul class="language">
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
@@ -45,9 +45,9 @@
 		<div class="col-md-6 search-text">
 			<h2><?php echo $static_content[93]->value; ?></h2>
 			<?php if (!empty($posts)) { ?>
-				<div class="col-md-12 no-padding">YOUR SEARCH FOR "<?php echo $key; ?>" HAS <?php echo count($posts); ?> MATCHES</div>
+				<div class="col-md-12 no-padding"><p id="search_alert">YOUR SEARCH FOR "<?php echo $key; ?>" HAS <?php echo count($posts); ?> MATCHES</p></div>
 			<?php } else { ?>
-				<div class="col-md-12 no-padding">YOUR SEARCH FOR "<?php echo $key; ?>" DID NOT MATCH WITH ANY DOCUMENT</div>
+				<div class="col-md-12 no-padding"><p id="search_alert">YOUR SEARCH FOR "<?php echo $key; ?>" DID NOT MATCH WITH ANY DOCUMENT</p></div>
 			<?php } ?>
 		</div>
 	</div>

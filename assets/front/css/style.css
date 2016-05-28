@@ -6,6 +6,14 @@ body {
 	font-family: 'Gotham-Medium';
 	cursor: url('../images/cursor.png'), default;
 }
+#mailto{
+	text-decoration: none;
+	color: #5c5c5c;
+}
+#mailto1{
+	text-decoration: none;
+	color: #fff;
+}
 .black {
 	background-color: black;
 }
@@ -117,7 +125,7 @@ header .language li ul li a:hover {
 	font-weight: bolder;
 	padding-left: 23% !important;
 	background-repeat: no-repeat;
-	background-image: url(../images/background3.png);	
+	background-image: url(../images/background3.png);
 }
 .slide .product-slide-text {
 	margin-top: 130px;
@@ -125,7 +133,7 @@ header .language li ul li a:hover {
 .wp-slide-profile {
 	width: 150%;
 	padding-bottom: 20px;
-	background-image: url(../images/slide-mask.png);	
+	background-image: url(../images/slide-mask.png);
 }
 .slide .slide-profile {
 	width: 350px;
@@ -143,7 +151,7 @@ header .language li ul li a:hover {
 .wp-slide-expertise {
 	width: 150%;
 	padding-bottom: 20px;
-	background-image: url(../images/slide-mask.png);	
+	background-image: url(../images/slide-mask.png);
 	margin-top: 220px !important;
 }
 .wp-slide-expertise h3 {
@@ -157,7 +165,7 @@ header .language li ul li a:hover {
 .wp-slide-news {
 	width: 150%;
 	padding-bottom: 20px;
-	background-image: url(../images/slide-mask.png);	
+	background-image: url(../images/slide-mask.png);
 	margin-top: 170px !important;
 }
 .wp-slide-news .col-md-12 {
@@ -744,7 +752,7 @@ nav .menu.active:hover {
 	background-image: url(../images/background1.png);
 }
 .wp-product {
-	background-image: url(../images/background4.png) !important;	
+	background-image: url(../images/background1.png) !important;
 }
 .wp-product .box-2 {
 	padding-top: 17px !important;
@@ -820,7 +828,7 @@ nav .menu.active:hover {
 	color: #c91517;
 	margin-top: 0px;
 	font-weight: bolder;
-	padding-bottom: 10px;		
+	padding-bottom: 10px;
 }
 .section-11 p {
 	padding-bottom: 30px;
@@ -1220,6 +1228,16 @@ nav .menu.active:hover {
 	height: 100%;
 }
 
+.footer .box-3 .social-media .foot_sosmed{
+	width: 25px;
+	margin-right: 10px;
+}
+
+.footer .box-3 .social-media .foot_sosmed_g{
+	width: 22px;
+	height: 22px;
+}
+
 @font-face {
     font-family: Gotham-Light;
     src: url(../fonts/gotham/Gotham-Light.otf);
@@ -1242,11 +1260,11 @@ nav .menu.active:hover {
 }
 ::-webkit-scrollbar {
 	background: transparent;
-	overflow: visible; 
+	overflow: visible;
 	width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(0,0,0,0.2); 
+	background-color: rgba(0,0,0,0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: rgba(0,0,0,0.4);
@@ -1259,7 +1277,7 @@ nav .menu.active:hover {
 	border-width: 6px 4px;
 	min-height: 40px;
 }
-::-webkit-scrollbar-track-piece { 
+::-webkit-scrollbar-track-piece {
 	background-color: #999;
 }
 ::-webkit-scrollbar-corner {
@@ -1272,10 +1290,116 @@ nav .menu.active:hover {
 	background-color: #333;
 }
 
+
+@media(max-width: 1600px) {
+	#slide_caption_title{
+		width: 300px;
+	}
+	#search_alert{
+		width: 380px;
+	}
+	#from_ceo_image{
+		height: 720px;
+		width: 600px;
+	}
+	#content_white_right_top{
+		margin-top: 350px;
+		margin-left: 820px;
+	}
+}
+
+@media(min-width: 1600px) {
+	.col-md-6.box-2{
+		padding-left: 150px;
+	}
+	#our_story{
+		padding-left: 50px;
+	}
+	.col-md-12.slide{
+		height: 1000px;
+	}
+	#content_white_right_top{
+		margin-top: 600px;
+		margin-left: 900px;
+	}
+	#from_ceo_image{
+		margin-top: -75px;
+	}
+	#content_white_right_top > .slide-profile{
+		width: 500px;
+	}
+	#slide_caption_title{
+		width: 400px;
+	}
+	.col-md-12.slide .dot-home-1{
+		display: none;
+	}
+	#footer_center{
+		margin-left: -150px;
+		width: 400px;
+	}
+	#slider_caption_box{
+		margin-left: 1000px;
+		margin-top: 400px !important;
+	}
+
+	#slider_caption_box_expertise{
+		margin-left: 900px !important;
+		margin-top: 350px !important;
+	}
+
+	#search_alert{
+		width: 380px;
+	}
+	#from_ceo_image{
+		height: 720px;
+		width: 600px;
+		margin-top: 0px;
+	}
+}
+
 @media(max-width: 1360px) {
 	body {
 		text-align: center;
 		padding-top: 60px;
+	}
+	.company-value ul li{
+		text-align: left;
+		line-height: 15px;
+	}
+	#ceo_text_eng{
+		width: 500px;
+		margin-left: 25px;
+		margin-bottom: -25px;
+	}
+	#ceo_text_ina{
+		width: 450px;
+		margin-left: 25px;
+	}
+	#ceo_text_chn{
+		width: 400px;
+		margin-left: 25px;
+	}
+	#ceo_text_kor{
+		width: 350px;
+		margin-left: 75px;
+	}
+	#ceo_text_rus{
+		width: 450px;
+		margin-left: 25px;
+	}
+	#values{
+		width: 380px;
+		margin-left: 25px;
+	}
+	#left_content{
+		margin-left: -150px;
+		width: 500px;
+	}
+	#from_ceo_image{
+		margin-left: -75px;
+		margin-top: -20px;
+		margin-bottom: 50px;
 	}
 	.header-text {
 		margin-top: 50px;
@@ -1306,7 +1430,7 @@ nav .menu.active:hover {
 		font-size: 12px;
 		display: block;
 		text-align: center !important;
-		border-bottom: 1px solid #ccc; 
+		border-bottom: 1px solid #ccc;
 		border-left: 5px solid #ccc;
 		background-color: #333 !important;
 		padding: 15px 10px 15px 10px !important;
@@ -1318,7 +1442,7 @@ nav .menu.active:hover {
 		font-size: 12px;
 		display: block;
 		text-align: left;
-		border-bottom: 1px solid #ccc; 
+		border-bottom: 1px solid #ccc;
 		border-left: 5px solid #ccc;
 		background-color: #333 !important;
 		padding: 25px 10px 15px 10px !important;
@@ -1330,7 +1454,7 @@ nav .menu.active:hover {
 		font-size: 12px;
 		display: block;
 		text-align: left;
-		border-bottom: 1px solid #ccc; 
+		border-bottom: 1px solid #ccc;
 		border-left: 5px solid #ccc;
 		background-color: #333 !important;
 		padding: 25px 10px 15px 10px !important;
@@ -1567,5 +1691,121 @@ nav .menu.active:hover {
 	}
 	.dot-contact-2 {
 		display: none;
+	}
+	.wp-product .col-md-6.box-2{
+		margin-top: 10px;
+	}
+}
+
+@media(max-width: 1000px) {
+	#slider_caption_box{
+		margin-left: 400px;
+		margin-top: 300px !important;
+	}
+	#slider_caption_box_expertise{
+		margin-left: 300px !important;
+		margin-top: 300px !important;
+	}
+	#content_white_right_top{
+		margin-left: 400px !important;
+		margin-top: 350px !important;
+	}
+	#ceo_text_rus{
+		width: 450px;
+		margin-left: 75px;
+	}
+	#video{
+		height: 385px;
+	}
+}
+@media(max-width: 850px) {
+	#slider_caption_box{
+		margin-left: 250px;
+		margin-top: 300px !important;
+	}
+	#slider_caption_box_expertise{
+		margin-left: 200px !important;
+		margin-top: 300px !important;
+	}
+	#content_white_right_top{
+		margin-left: 300px !important;
+		margin-top: 300px !important;
+	}
+	#left_content{
+		margin-left: 75px;
+	}
+	#from_ceo_image{
+		margin-left: 10px;
+	}
+	#values{
+		text-align: center;
+	}
+	#arrow_left{
+		margin-left: 45px;
+	}
+}
+@media(max-width: 600px) {
+	#slider_caption_box{
+		margin-left: -30px;
+		margin-top: 340px !important;
+	}
+	#slider_caption_box_expertise{
+		margin-left: -30px !important;
+		margin-top: 300px !important;
+	}
+	#caption_expert_content{
+		width: 300px !important;
+	}
+	#content_white_right_top{
+		margin-left: -30px !important;
+		margin-top: 360px !important;
+	}
+	#left_content{
+		margin-left: -10px;
+		width: 320px;
+	}
+	#left_content h3{
+		text-align: center;
+	}
+	#ceo_text_ina{
+		width: 300px;
+		margin-left: -12px;
+	}
+	#ceo_text_eng{
+		width: 300px;
+		margin-left: -12px;
+		margin-bottom: 25px;
+	}
+	#ceo_text_chn{
+		width: 300px;
+		margin-left: -12px;
+		margin-bottom: -75px;
+	}
+	#ceo_text_kor{
+		width: 300px;
+		margin-left: -12px;
+		margin-bottom: 20px;
+	}
+	#ceo_text_rus{
+		width: 300px;
+		margin-left: -12px;
+		margin-bottom: 20px;
+	}
+	#values{
+		width: 200px;
+		text-align: center;
+	}
+	#content_values {
+		margin-top: -30px;
+		height: 320px;
+	}
+	#from_ceo_image{
+		width: 250px;
+		height: 320px;
+		margin-left: -10px;
+		margin-top: 5px;
+	}
+	#video{
+		height: 180px;
 	}
 }

@@ -2,12 +2,12 @@
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12 no-padding">
-                <img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>">
+                <a href="home"><img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>"></a>
             </div>
             <div class="col-md-12 no-padding social-media-wrapper">
-                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/fb_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/in_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/g+_.png'); ?>"></a>
                 <ul class="language">
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
@@ -37,7 +37,7 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-9 slide-text slide-contact wp-slide-profile">
+		<div class="col-md-3 col-md-offset-9 slide-text slide-contact wp-slide-profile" id="slider_caption_box">
 			<section class="dot-contact-1"></section>
 			<div class="slide-profile">
                 <?php
@@ -54,7 +54,7 @@
 				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[87]->value; ?></p></div>
 				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[57]->value; ?></p></div>
 				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[58]->value; ?></p></div>
-				<div class="col-md-12 no-padding"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[59]->value; ?></p></div>
+				<div class="col-md-12 no-padding"><a href="mailto:marketing@sarimas.com" id="mailto"><p style="font-family: Gotham-Light; margin-top: -10px;" ><?php echo $static_content[59]->value; ?></p></a></div>
 			</div>
 		</div>
 	</div>

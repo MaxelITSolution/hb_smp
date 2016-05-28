@@ -2,12 +2,12 @@
     <div class="container">
         <div class="col-md-4">
             <div class="col-md-12 no-padding">
-                <img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>">
+                <a href="home"><img class="logo" src="<?php echo site_url('assets/front/images/logo.png'); ?>"></a>
             </div>
             <div class="col-md-12 no-padding social-media-wrapper">
-            	<a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter.png'); ?>"></a>
-                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[60]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/fb_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[61]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/in_.png'); ?>"></a>
+                <a target="blank" href="<?php echo $static_content[62]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/g+_.png'); ?>"></a>
                 <ul class="language">
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
@@ -37,7 +37,7 @@
 				<button class="search-button"><i class="fa fa-search"></i></button>
 			</div>
 		</div>
-		<div class="col-md-3 col-md-offset-9 slide-text no-padding product-slide-text wp-slide-profile">
+		<div class="col-md-3 col-md-offset-9 slide-text no-padding product-slide-text wp-slide-profile" id="slider_caption_box">
 			<section class="dot-product-1"></section>
 			<div class="slide-product slide-profile">
                 <?php
@@ -59,7 +59,7 @@
 <section class="col-md-12 section-10 wp-product">
 	<div class="container">
 		<div class="col-md-6 box-1 text-right">
-			<iframe class="main-image" src="http://www.youtube.com/embed/WurY94fmHw8"></iframe>
+			<iframe class="main-image" src="http://www.youtube.com/embed/WurY94fmHw8" id="video"></iframe>
 			<a target="blank" href="<?php echo $static_content[51]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/facebook2.png'); ?>"></a>
 			<a target="blank" href="<?php echo $static_content[52]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter2.png'); ?>"></a>
 			<a target="blank" href="<?php echo $static_content[53]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
