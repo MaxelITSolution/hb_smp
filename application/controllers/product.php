@@ -20,11 +20,22 @@ class Product extends FrontController {
 	    									   ->where('p.id', $this->input->get('detail'))
 	    									   ->get()
 	    									   ->row();
+      
+      
+      $page = 1;
+      if ($this->input->get("page") != "") {
+        $page = $this->input->get("page");
+      }
+      $perpage = 8;
+      $start = ($page-1) * $perpage;
     	$this->data['products'] 	= $this->db->select('p.*')
 	    									   ->from('products as p')
-	    									   ->limit(8)
+	    									   ->limit($perpage,$start)
 	    									   ->get()
 	    									   ->result();
+      $rows = $this->db->count_all('products');
+      $this->data['page_count'] = $rows / $perpage + ($rows % $perpage > 0 ? 1 : 0);
+      $this->data['current_page'] = $page;
     	$this->load->view('front/components/main_layout', $this->data);
 	}
 
