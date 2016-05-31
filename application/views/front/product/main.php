@@ -83,6 +83,9 @@
 		<div class="col-md-7 box-1">
 			<p><?php echo $static_content[23]->value; ?></p>
 		</div>
+    
+    
+    
 		<div class="col-md-12 box-2" id="product-section">
 			<div class="row">
 				<?php foreach ($products as $key => $product) { ?>
@@ -93,12 +96,7 @@
 					<a class="single_image" href="javascript:;" data-title="<?php echo $product->$product_name; ?>" data-desc="<?php echo nl2br($product->$product_description); ?>" data-href="<?php echo site_url('uploads/' . $product->image_name); ?>">
 						<div class="col-md-3 col-sm-5">
 							<img src="<?php echo site_url('uploads/' . $product->image_name); ?>">
-                            <p style="font-size: 14px;">
-                                <?php
-    								$product_name = 'name_' . $language;
-    								echo strtoupper($product->$product_name);
-    							?>
-                            </p>
+              <p style="font-size: 14px;"> <?php echo strtoupper($product->$product_name); ?> </p>
 						</div>
 					</a>
 					<?php if ($key == 3) { ?>
@@ -106,15 +104,28 @@
 					<?php } ?>
 				<?php } ?>
 			</div>
+<!--      Paging -->
+      <?php if ($page_count > 1) { ?>
 			<ul>
-				<li class="active"><a href="">Page</a></li>
-				<li><a href="">1</a></li>
-				<li><a href="">2</a></li>
-				<li><a href="">3</a></li>
-				<li><a href="">4</a></li>
-				<li><a href="">></a></li>
+        <li class="active"><a href="#">Page</a></li>
+
+        <?php if ($current_page > 1 ) { ?>
+        <li><a href="<?php echo site_url('product?page='.($current_page - 1)); ?>"><</a></li>
+        <?php } ?>
+
+        <?php for ($i=1 ; $i <= $page_count; $i++) { ?>
+        <li><a href="<?php echo site_url('product?page='.$i); ?>"><?php echo $i; ?></a></li>        
+        <?php } ?>
+        
+        <?php if ($current_page < $page_count) { ?>
+        <li><a href="<?php echo site_url('product?page='.($current_page + 1)); ?>">></a></li>
+        <?php } ?>
 			</ul>
+      <?php } ?>
 		</div>
+    
+    
+    
 	</div>
 </section>
 <section class="wp-dialog" <?php echo $detail ? 'style="display: block;"' : '' ?>>
