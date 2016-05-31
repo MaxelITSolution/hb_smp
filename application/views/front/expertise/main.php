@@ -72,13 +72,13 @@
 				<p><?php echo $static_content[43]->value; ?></p>
 			</div>
 			<div class="col-md-12 text-center">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-1.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-2.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-3.jpg'); ?>"> <br>
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-1.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-2.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-3.png'); ?>"> <br>
 				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-4.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-5.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-6.jpg'); ?>">
-				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.jpg'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-5.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-6.png'); ?>">
+				<img src="<?php echo site_url('assets/front/images/content/SMP-certificate-7.png'); ?>">
 			</div>
 		</div>
 		<section class="dot-expertise-3"></section>

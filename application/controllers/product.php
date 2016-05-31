@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Product extends FrontController {
-	
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -22,9 +22,10 @@ class Product extends FrontController {
 	    									   ->row();
     	$this->data['products'] 	= $this->db->select('p.*')
 	    									   ->from('products as p')
-	    									   ->limit(8)
+	    									   ->limit(8, $this->uri->segment(3))
 	    									   ->get()
 	    									   ->result();
+
     	$this->load->view('front/components/main_layout', $this->data);
 	}
 
