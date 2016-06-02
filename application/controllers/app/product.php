@@ -35,20 +35,64 @@ class Product extends AppController {
 	public function validate()
 	{
 		$rules = [
-			'name' => [
-				'field' => 'name', 
-				'label' => 'Name', 
-				'rules' => 'trim|required|xss_clean|is_unique[products.name]'
+			'name_eng' => [
+				'field' => 'name_eng', 
+				'label' => 'Name Eng', 
+				'rules' => 'trim|required|xss_clean|is_unique[products.name_eng]'
 			],
-			'description' => [
-				'field' => 'description', 
-				'label' => 'Description', 
+			'name_ina' => [
+				'field' => 'name_ina', 
+				'label' => 'Name Ina', 
+				'rules' => 'trim|required|xss_clean|is_unique[products.name_ina]'
+			],
+			'name_chn' => [
+				'field' => 'name_chn', 
+				'label' => 'Name Chn', 
+				'rules' => 'trim|required|xss_clean|is_unique[products.name_chn]'
+			],
+			'name_kor' => [
+				'field' => 'name_kor', 
+				'label' => 'Name Kor', 
+				'rules' => 'trim|required|xss_clean|is_unique[products.name_kor]'
+			],
+			'name_rus' => [
+				'field' => 'name_rus', 
+				'label' => 'Name Rus', 
+				'rules' => 'trim|required|xss_clean|is_unique[products.name_rus]'
+			],
+			'description_eng' => [
+				'field' => 'description_eng', 
+				'label' => 'Description Eng', 
 				'rules' => 'trim|required|xss_clean'
-			]
+			],
+			'description_ina' => [
+				'field' => 'description_ina', 
+				'label' => 'Description Ina', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'description_chn' => [
+				'field' => 'description_chn', 
+				'label' => 'Description Chn', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'description_kor' => [
+				'field' => 'description_kor', 
+				'label' => 'Description Kor', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'description_rus' => [
+				'field' => 'description_rus', 
+				'label' => 'Description Rus', 
+				'rules' => 'trim|required|xss_clean'
+			],
 		];
 
 		if ($this->input->post('id')) {
-			$rules['name']['rules'] = 'trim|required|xss_clean';
+			$rules['name_eng']['rules'] = 'trim|required|xss_clean';
+			$rules['name_ina']['rules'] = 'trim|required|xss_clean';
+			$rules['name_chn']['rules'] = 'trim|required|xss_clean';
+			$rules['name_kor']['rules'] = 'trim|required|xss_clean';
+			$rules['name_rus']['rules'] = 'trim|required|xss_clean';
 		}
 
 	    $this->form_validation->set_rules($rules);
@@ -69,10 +113,18 @@ class Product extends AppController {
 
 	public function create()
 	{
-		$data['name'] 			= $this->input->post('name');
-		$data['slug'] 			= $this->helper->sluggable($this->input->post('name'));
-		$data['description'] 	= $this->input->post('description');
-		$data['image_name'] 	= $this->input->post('image_name');
+		$data['name_eng'] 			= $this->input->post('name_eng');
+		$data['name_ina'] 			= $this->input->post('name_ina');
+		$data['name_chn'] 			= $this->input->post('name_chn');
+		$data['name_kor'] 			= $this->input->post('name_kor');
+		$data['name_rus'] 			= $this->input->post('name_rus');
+		$data['slug'] 				= $this->helper->sluggable($this->input->post('name_eng'));
+		$data['description_eng'] 	= $this->input->post('description_eng');
+		$data['description_ina'] 	= $this->input->post('description_ina');
+		$data['description_chn'] 	= $this->input->post('description_chn');
+		$data['description_kor'] 	= $this->input->post('description_kor');
+		$data['description_rus'] 	= $this->input->post('description_rus');
+		$data['image_name'] 		= $this->input->post('image_name');
 		$this->db->insert('products', $data); 
 
 		header('Content-Type: application/json');
@@ -89,10 +141,20 @@ class Product extends AppController {
 			}
 		}
 
-		$data['name'] 			= $this->input->post('name');
-		$data['slug'] 			= $this->helper->sluggable($this->input->post('name'));
-		$data['description'] 	= $this->input->post('description');
-		$data['image_name'] 	= $this->input->post('image_name');
+		$data['name_eng'] 			= $this->input->post('name_eng');
+		$data['name_ina'] 			= $this->input->post('name_ina');
+		$data['name_chn'] 			= $this->input->post('name_chn');
+		$data['name_kor'] 			= $this->input->post('name_kor');
+		$data['name_rus'] 			= $this->input->post('name_rus');
+		$data['slug'] 				= $this->helper->sluggable($this->input->post('name_eng'));
+		$data['description_eng'] 	= $this->input->post('description_eng');
+		$data['description_ina'] 	= $this->input->post('description_ina');
+		$data['description_chn'] 	= $this->input->post('description_chn');
+		$data['description_kor'] 	= $this->input->post('description_kor');
+		$data['description_rus'] 	= $this->input->post('description_rus');
+		if ($this->input->post('image_name')) {
+			$data['image_name'] = $this->input->post('image_name');
+		}
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('products', $data); 
 

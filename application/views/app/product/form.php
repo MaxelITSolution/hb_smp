@@ -27,19 +27,99 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" name="name" class="form-control" placeholder="Product Name...">
-							<div class="validation-message" data-field="name"></div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#eng">Eng</a></li>
+						<li><a data-toggle="tab" href="#ina">Ina</a></li>
+						<li><a data-toggle="tab" href="#chn">Chn</a></li>
+						<li><a data-toggle="tab" href="#kor">Kor</a></li>
+						<li><a data-toggle="tab" href="#rus">Rus</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="eng" class="tab-pane fade in active">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="name_eng" class="form-control" placeholder="Product Name...">
+									<div class="validation-message" data-field="name_eng"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="description_eng" class="form-control" rows="10" placeholder="Description..."></textarea>
+									<div class="validation-message" data-field="description_eng"></div>
+								</div>
+							</div>
 						</div>
-					</div>
+						<div id="ina" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="name_ina" class="form-control" placeholder="Product Name...">
+									<div class="validation-message" data-field="name_ina"></div>
+								</div>
+							</div>
 
-					<hr class="line-dashed line-full">
+							<hr class="line-dashed line-full">
 
-					<div class="form-group">
-						<div class="col-sm-12">
-							<textarea name="description" class="form-control" rows="10" placeholder="Description..."></textarea>
-							<div class="validation-message" data-field="description"></div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="description_ina" class="form-control" rows="10" placeholder="Description..."></textarea>
+									<div class="validation-message" data-field="description_ina"></div>
+								</div>
+							</div>
+						</div>
+						<div id="chn" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="name_chn" class="form-control" placeholder="Product Name...">
+									<div class="validation-message" data-field="name_chn"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="description_chn" class="form-control" rows="10" placeholder="Description..."></textarea>
+									<div class="validation-message" data-field="description_chn"></div>
+								</div>
+							</div>
+						</div>
+						<div id="kor" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="name_kor" class="form-control" placeholder="Product Name...">
+									<div class="validation-message" data-field="name_kor"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="description_kor" class="form-control" rows="10" placeholder="Description..."></textarea>
+									<div class="validation-message" data-field="description_kor"></div>
+								</div>
+							</div>
+						</div>
+						<div id="rus" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="name_rus" class="form-control" placeholder="Product Name...">
+									<div class="validation-message" data-field="name_rus"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="description_rus" class="form-control" rows="10" placeholder="Description..."></textarea>
+									<div class="validation-message" data-field="description_rus"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 

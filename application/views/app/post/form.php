@@ -27,19 +27,99 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" name="title" class="form-control" placeholder="Title...">
-							<div class="validation-message" data-field="title"></div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#eng">Eng</a></li>
+						<li><a data-toggle="tab" href="#ina">Ina</a></li>
+						<li><a data-toggle="tab" href="#chn">Chn</a></li>
+						<li><a data-toggle="tab" href="#kor">Kor</a></li>
+						<li><a data-toggle="tab" href="#rus">Rus</a></li>
+					</ul>
+
+					<div class="tab-content">
+						<div id="eng" class="tab-pane fade in active">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="title_eng" class="form-control" placeholder="Title...">
+									<div class="validation-message" data-field="title_eng"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="content_eng" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+									<div class="validation-message" data-field="content_eng"></div>
+								</div>
+							</div>	
 						</div>
-					</div>
+						<div id="ina" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="title_ina" class="form-control" placeholder="Title...">
+									<div class="validation-message" data-field="title_ina"></div>
+								</div>
+							</div>
 
-					<hr class="line-dashed line-full">
+							<hr class="line-dashed line-full">
 
-					<div class="form-group">
-						<div class="col-sm-12">
-							<textarea name="content" class="form-control" id="redactor" placeholder="Content..."></textarea>
-							<div class="validation-message" data-field="content"></div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="content_ina" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+									<div class="validation-message" data-field="content_ina"></div>
+								</div>
+							</div>
+						</div>
+						<div id="chn" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="title_chn" class="form-control" placeholder="Title...">
+									<div class="validation-message" data-field="title_chn"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="content_chn" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+									<div class="validation-message" data-field="content_chn"></div>
+								</div>
+							</div>
+						</div>
+						<div id="kor" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="title_kor" class="form-control" placeholder="Title...">
+									<div class="validation-message" data-field="title_kor"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="content_kor" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+									<div class="validation-message" data-field="content_kor"></div>
+								</div>
+							</div>
+						</div>
+						<div id="rus" class="tab-pane fade">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input type="text" name="title_rus" class="form-control" placeholder="Title...">
+									<div class="validation-message" data-field="title_rus"></div>
+								</div>
+							</div>
+
+							<hr class="line-dashed line-full">
+
+							<div class="form-group">
+								<div class="col-sm-12">
+									<textarea name="content_rus" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+									<div class="validation-message" data-field="content_rus"></div>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -130,16 +210,18 @@
 			$('#form-action').formLoad(row);
 		}
 
-		$('#redactor').redactor({ 
-			imageUpload: "<?php echo site_url('app/post/redactorupload'); ?>",
-			imageDeleteCallback: function(url) {
-				var arrUrl = url.split('/');
-				var filename = arrUrl[arrUrl.length-1];
+		$('.redactor').each(function() {
+			$(this).redactor({ 
+				imageUpload: "<?php echo site_url('app/post/redactorupload'); ?>",
+				imageDeleteCallback: function(url) {
+					var arrUrl = url.split('/');
+					var filename = arrUrl[arrUrl.length-1];
 
-				$.post("<?php echo site_url('app/post/redactordelete'); ?>", {filename : filename}).done(function(data) {
-					console.log(data);
-				});
-			}
+					$.post("<?php echo site_url('app/post/redactordelete'); ?>", {filename : filename}).done(function(data) {
+						console.log(data);
+					});
+				}
+			});
 		});
 
         $("#form-action").keypress(function(event) {

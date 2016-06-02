@@ -1,10 +1,7 @@
 /*!
- * Lionade JavaScript Library v1.0
+ * Lionade Datagrid Jquery Plugin
  * http://lionadejs.com/
- *
- * Copyright 2015, Muhammad Rizki Akbar
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://lionadejs.com/license
+ * By Muhammad Rizki A
  */
 
 (function ( $ ) {
@@ -31,7 +28,8 @@
 	        itemsPerPage		: 5,
 	        itemsPerPageOption 	: [5, 10, 15, 20],
 	        rowChecked 			: [],
-	        queryParams 		: {}
+	        queryParams 		: {},
+	        rowDetail			: {}
 	    }, options);
 
 		// Create the table parts
@@ -58,6 +56,11 @@
 				var rowCheckString = "<th sortable='false' style='text-align: center; width: 20px;' rowspan='2'><input type='checkbox'></th>";
 				$(table).find('#thead-merge-cells').append(rowCheckString);
 				CheckAllRow();
+			}
+
+			if (!$.isEmptyObject(config.rowDetail)) {
+				var rowDetail = "<th sortable='false' style='text-align: center; width: 20px;' rowspan='2'></th>";
+				$(table).find('#thead-merge-cells').append(rowDetail);
 			}
 
 			// Check each merged cells by comparing an columns array and mergecells array
@@ -119,6 +122,11 @@
 				var rowCheckString = "<th sortable='false' style='text-align: center; width: 20px;'><input type='checkbox'></th>";
 				$(table).find('#thead-title').append(rowCheckString);
 				CheckAllRow();
+			}
+
+			if (!$.isEmptyObject(config.rowDetail) && config.mergeCells.length == 0) {
+				var rowDetail = "<th sortable='false' style='text-align: center; width: 20px;'></th>";
+				$(table).find('#thead-title').append(rowDetail);
 			}
 			
 			// Show each column
@@ -186,6 +194,8 @@
 			AjaxRequest(activePageNumber, itemsPerPage, dataSearch, function() {
 				var pageNumber 	= (parseInt(activePageNumber) * itemsPerPage - itemsPerPage) + 1;
 				var temp 		= "";
+				var rowData 	= "";
+				var rowIndex 	= "";
 
 				// Check active page number
 				if (parseInt(activePageNumber) > Math.ceil(data.total / itemsPerPage) && Math.ceil(data.total / itemsPerPage) > 0) {
@@ -195,7 +205,7 @@
 
 				if (data.total >= 1) {
 					for (var i = 0; i < data.rows.length; i++) {
-						temp += "<tr>";
+						temp += "<tr class='main-row'>";
 
 						// Show column number if it is enabled
 						if (config.rowNumber) {
@@ -204,19 +214,32 @@
 
 						// Show column checkbox if it is enabled
 						if (config.rowCheck) {
-							temp += "<td style='text-align: center;'><input value='" + data.rows[i][config.primaryField] + "' type='checkbox'></td>";
+							temp += "<td class='checkbox-column' style='text-align: center;'><input value='" + data.rows[i][config.primaryField] + "' type='checkbox'></td>";
+						}
+
+						if (!$.isEmptyObject(config.rowDetail)) {
+							temp += "<td style='text-align: center;'>" +
+										"<div class='detail-link' data-id='" + i + "' data-expand='false' style='width: 10px; height: 4px; margin-left: auto; margin-right: auto; cursor: pointer; margin-top: 8px; background-color: #595959; border: 1px solid #595959; -border-radius: 0.1em; -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em;'>" + 
+											"<div style='width: 4px; height: 10px; cursor: pointer; margin-top: -4px; margin-left: 2px; background-color: #595959; border: 1px solid #595959; -border-radius: 0.1em; -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em;'></div>" +
+										"</div>" +
+									"</td>";
 						}
 
 						// check if the column is worth undefined then call the anonymous function
 						config.columns.forEach(function(rowColumn) {
-							if (data.rows[i][rowColumn.field] != undefined) {
+							if (typeof data.rows[i][rowColumn.field] !== 'undefined') {
 								temp += "<td style='text-align: " + rowColumn.align + "; width: " + rowColumn.width + "px;'>" + data.rows[i][rowColumn.field] + "</td>";
-							} else {
+							} else if (typeof rowColumn.rowStyler !== 'undefined') {
+								rowData = data.rows[i];
+								rowIndex = i;
 								temp += "<td style='text-align: " + rowColumn.align + "; width: " + rowColumn.width + "px;'>" + rowColumn.rowStyler(data.rows[i], i) + "</td>";
+							} else {
+								temp += "<td style='text-align: " + rowColumn.align + "; width: " + rowColumn.width + "px;'>Undefined</td>";	
 							}
 						});
 
-						temp += '</tr>';
+						temp += "</tr>";
+
 						pageNumber++;
 					}
 
@@ -234,7 +257,10 @@
 
 				// Page info
 				PageInfo(activePageNumber, itemsPerPage);
-			});			
+
+				// Detail row
+				ShowDetailRow();
+			});
 		}
 
 		// Display paging
@@ -324,42 +350,39 @@
 			var temp = -1;
 			config.rowNumber == true ? temp += 1 : '';
 			config.rowCheck == true ? temp += 1 : '';
+			!$.isEmptyObject(config.rowDetail) ? temp += 1 : '';
 			return temp;
 		}
 
 		// Chek uncheck row
 		function CheckRow() {
-			$(table).children('tbody').children('tr').each(function() {
-				$(this).children().each(function(index, object) {
-					if (index == GetUsedRow()) {
-						$(this).children().each(function() {
-							
-							// Check Checkbox sesuai array
-							for (var i = 0; i < config.rowChecked.length; i++) {
-								if (config.rowChecked[i] == $(this).attr('value')) {
-									$(this).prop("checked", true);
-								}
-							}
-
-							$(this).on('click', function() {
-								var temp, found = false;
-								for (var i = 0; i < config.rowChecked.length; i++) {
-									if (config.rowChecked[i] == this.value) {
-										found = true;
-										temp = i;
-									}
-								}
-
-								if (!found) {
-									config.rowChecked[config.rowChecked.length] = parseInt(this.value);
-								} else {
-									config.rowChecked.splice(temp, 1);
-								}
-								
-								CheckTheadCheckbox();
-							});
-						});
+			$(table).find('.checkbox-column').each(function() {
+				$(this).children().each(function(index, object) {		
+				
+					// Check Checkbox sesuai array
+					for (var i = 0; i < config.rowChecked.length; i++) {
+						if (config.rowChecked[i] == $(this).attr('value')) {
+							$(this).prop("checked", true);
+						}
 					}
+
+					$(this).on('click', function() {
+						var temp, found = false;
+						for (var i = 0; i < config.rowChecked.length; i++) {
+							if (config.rowChecked[i] == this.value) {
+								found = true;
+								temp = i;
+							}
+						}
+
+						if (!found) {
+							config.rowChecked[config.rowChecked.length] = parseInt(this.value);
+						} else {
+							config.rowChecked.splice(temp, 1);
+						}
+						
+						CheckTheadCheckbox();
+					});
 				});
 			});
 
@@ -387,13 +410,9 @@
 
 		function GetAllCheckbox() {
 			var arr = [];
-			$(table).children('tbody').children('tr').each(function() {
+			$(table).find('.checkbox-column').each(function() {
 				$(this).children().each(function(index, object) {
-					if (index == GetUsedRow()) {
-						$(this).children().each(function() {
-							arr[arr.length] = $(this);			
-						});
-					}
+					arr[arr.length] = $(this);
 				});
 			});
 
@@ -463,15 +482,13 @@
 	    function SearchInput() {
 	    	var field 		= $(config.searchFieldElement).val();
     		var value 		= $(config.searchInputElement).val();
-    		var temp 		= '';
+    		var temp 		= { field : field, value : value };
 
-    		if (value == '') {
-    			temp = '';
-    		} else {
-    			temp =  { field : field, value : value };
-    		}
-
-    		return temp;
+			if (field == undefined || value == undefined) {
+				return '';
+			} else {
+				return temp;
+			}
 	    }
 
 	    // Page info
@@ -527,21 +544,17 @@
 	    function SortData() {
 	    	// Set sort data by primary field
 	    	config.sortBy = config.primaryField;
-
 	    	SortArrow();
 
 			$(table).children('thead').children().children().each(function(index, object) {
 				if ($(object).attr('sortable') != 'false') {
-
-					$(this).css('cursor', 'pointer');
-					
+					$(this).css('cursor', 'pointer');					
 					$(this).on('click', function() {	
 						$(table).children('thead').children().children().each(function(index, object) {
 							$(this).children('span').remove();
 						});
 
 						SortArrow();
-
 						var arrow = $('<span></span>');
 						$(this).append(arrow);
 						
@@ -576,6 +589,39 @@
 					});	
 				}
 			});
+	    }
+
+	    function ShowDetailRow() {
+	    	$(table).find('.detail-link').each(function() {
+	    		$(this).off();
+	    		$(this).on('click', function() {
+	    			var rowIndex = $(this).attr('data-id');
+	    			if ($(this).attr('data-expand') == 'false') {
+						var formatter = "<tr id='detail-row-" + rowIndex + "' style='display: none;'>" +
+											"<td colspan='3'></td>" +
+											"<td colspan='9' class='detail-content'>" +
+												config.rowDetail.formatter(data.rows[rowIndex], rowIndex)											
+											"</td>" +
+										"</tr>";
+						$(formatter).insertAfter($(this).closest("tr")).fadeIn();
+						config.rowDetail.onExpandRow(data.rows[rowIndex], rowIndex);
+
+						var temp = "<div class='detail-link' data-id='" + rowIndex + "' data-expand='true' style='width: 10px; height: 4px; margin-left: auto; margin-right: auto; cursor: pointer; margin-top: 8px; background-color: #595959; border: 1px solid #595959; -border-radius: 0.1em; -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em;'></div>";
+						$(this).closest("td").html(temp);
+	    			} else {
+	    				$(this).closest("tr").next().fadeOut(function() {
+	    					$(this).remove();
+	    				});
+
+	    				var temp = "<div class='detail-link' data-id='" + rowIndex + "' data-expand='false' style='width: 10px; height: 4px; margin-left: auto; margin-right: auto; cursor: pointer; margin-top: 8px; background-color: #595959; border: 1px solid #595959; -border-radius: 0.1em; -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em;'>" + 
+										"<div style='width: 4px; height: 10px; cursor: pointer; margin-top: -4px; margin-left: 2px; background-color: #595959; border: 1px solid #595959; -border-radius: 0.1em; -moz-border-radius: 0.1em; -webkit-border-radius: 0.1em;'></div>" +
+									"</div>";
+						$(this).closest("td").html(temp);
+	    			}
+
+	    			ShowDetailRow();
+	    		});
+	    	});
 	    }
 
 	    this.reload = function() {
@@ -696,7 +742,7 @@
 				}
 		    }, editableOptions);
 
-			$(table).children('tbody').children().each(function(index, object) {
+			$(table).children('tbody').children('.main-row').each(function(index, object) {
 				if (arrConfig.rowIndex == 'all') {
 					rowModifier($(this), arrConfig.columnIndex, index, arrConfig.styler, arrConfig.onEdit, arrConfig.onSave);
 				} else {
@@ -728,14 +774,14 @@
 			// Sort data
 			SortData();
 
-			// Search
-			Search();
-
 			// Display data
 			DisplayData(config.activePageNumber, config.itemsPerPage, SearchInput());
 
-			// Option Paging
+			// Option paging
 			OptionPaging();
+
+			// Search
+			Search();
 		}
 
 	    return this;

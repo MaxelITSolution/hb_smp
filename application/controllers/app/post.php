@@ -41,20 +41,64 @@ class Post extends AppController {
 				'label' => 'Category ID', 
 				'rules' => 'trim|required|xss_clean'
 			],
-			'title' => [
-				'field' => 'title', 
-				'label' => 'Title', 
-				'rules' => 'trim|required|xss_clean|is_unique[posts.title]'
+			'title_eng' => [
+				'field' => 'title_eng', 
+				'label' => 'Title Eng', 
+				'rules' => 'trim|required|xss_clean|is_unique[posts.title_eng]'
 			],
-			'content' => [
-				'field' => 'content', 
-				'label' => 'Content', 
+			'title_ina' => [
+				'field' => 'title_ina', 
+				'label' => 'Title Ina', 
+				'rules' => 'trim|required|xss_clean|is_unique[posts.title_ina]'
+			],
+			'title_chn' => [
+				'field' => 'title_chn', 
+				'label' => 'Title Chn', 
+				'rules' => 'trim|required|xss_clean|is_unique[posts.title_chn]'
+			],
+			'title_kor' => [
+				'field' => 'title_kor', 
+				'label' => 'Title Kor', 
+				'rules' => 'trim|required|xss_clean|is_unique[posts.title_kor]'
+			],
+			'title_rus' => [
+				'field' => 'title_rus', 
+				'label' => 'Title Rus', 
+				'rules' => 'trim|required|xss_clean|is_unique[posts.title_rus]'
+			],
+			'content_eng' => [
+				'field' => 'content_eng', 
+				'label' => 'Content Eng', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'content_ina' => [
+				'field' => 'content_ina', 
+				'label' => 'Content Ina', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'content_chn' => [
+				'field' => 'content_chn', 
+				'label' => 'Content Chn', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'content_kor' => [
+				'field' => 'content_kor', 
+				'label' => 'Content Kor', 
+				'rules' => 'trim|required|xss_clean'
+			],
+			'content_rus' => [
+				'field' => 'content_rus', 
+				'label' => 'Content Rus', 
 				'rules' => 'trim|required|xss_clean'
 			]
 		];
 
 		if ($this->input->post('id')) {
-			$rules['title']['rules'] = 'trim|required|xss_clean';
+			$rules['title_eng']['rules'] = 'trim|required|xss_clean';
+			$rules['title_ina']['rules'] = 'trim|required|xss_clean';
+			$rules['title_chn']['rules'] = 'trim|required|xss_clean';
+			$rules['title_kor']['rules'] = 'trim|required|xss_clean';
+			$rules['title_rus']['rules'] = 'trim|required|xss_clean';
 		}
 
 	    $this->form_validation->set_rules($rules);
@@ -76,9 +120,17 @@ class Post extends AppController {
 	public function create()
 	{
 		$data['category_id'] 	= $this->input->post('category_id');
-		$data['slug'] 			= $this->helper->sluggable($this->input->post('title'));
-		$data['title'] 			= $this->input->post('title');
-		$data['content'] 		= $this->input->post('content');
+		$data['slug'] 			= $this->helper->sluggable($this->input->post('title_eng'));
+		$data['title_eng'] 		= $this->input->post('title_eng');
+		$data['title_ina'] 		= $this->input->post('title_ina');
+		$data['title_chn'] 		= $this->input->post('title_chn');
+		$data['title_kor'] 		= $this->input->post('title_kor');
+		$data['title_rus'] 		= $this->input->post('title_rus');
+		$data['content_eng'] 	= $this->input->post('content_eng');
+		$data['content_ina'] 	= $this->input->post('content_ina');
+		$data['content_chn'] 	= $this->input->post('content_chn');
+		$data['content_kor'] 	= $this->input->post('content_kor');
+		$data['content_rus'] 	= $this->input->post('content_rus');
 		$data['image_name'] 	= $this->input->post('image_name');
 		$data['created_at'] 	= date('Y-m-d H:i:s');
 		$this->db->insert('posts', $data); 
@@ -98,10 +150,20 @@ class Post extends AppController {
 		}
 
 		$data['category_id'] 	= $this->input->post('category_id');
-		$data['slug'] 			= $this->helper->sluggable($this->input->post('title'));
-		$data['title'] 			= $this->input->post('title');
-		$data['content'] 		= $this->input->post('content');
-		$data['image_name'] 	= $this->input->post('image_name');
+		$data['slug'] 			= $this->helper->sluggable($this->input->post('title_eng'));
+		$data['title_eng'] 		= $this->input->post('title_eng');
+		$data['title_ina'] 		= $this->input->post('title_ina');
+		$data['title_chn'] 		= $this->input->post('title_chn');
+		$data['title_kor'] 		= $this->input->post('title_kor');
+		$data['title_rus'] 		= $this->input->post('title_rus');
+		$data['content_eng'] 	= $this->input->post('content_eng');
+		$data['content_ina'] 	= $this->input->post('content_ina');
+		$data['content_chn'] 	= $this->input->post('content_chn');
+		$data['content_kor'] 	= $this->input->post('content_kor');
+		$data['content_rus'] 	= $this->input->post('content_rus');
+		if ($this->input->post('image_name')) {
+			$data['image_name'] = $this->input->post('image_name');
+		}
 		$data['updated_at'] 	= date('Y-m-d H:i:s');
 		$this->db->where('id', $this->input->post('id'));
 		$this->db->update('posts', $data); 

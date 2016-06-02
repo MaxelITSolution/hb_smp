@@ -12,7 +12,7 @@ class Product_M extends CI_Model {
 	{
 		$table 	= 'products as a';
 		$select = 'a.*';
-		
+
 		$replace_field 	= [
 			['old_name' => 'name', 'new_name' => 'a.name']
 		];
