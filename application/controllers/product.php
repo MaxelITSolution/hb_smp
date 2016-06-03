@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Product extends FrontController {
-	
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -30,6 +30,9 @@ class Product extends FrontController {
       $start = ($page-1) * $perpage;
     	$this->data['products'] 	= $this->db->select('p.*')
 	    									   ->from('products as p')
+	    									   ->limit(8, $this->uri->segment(3))
+	    									   ->get()
+	    									   ->result();
 	    									   ->limit($perpage,$start)
 	    									   ->get()
 	    									   ->result();
