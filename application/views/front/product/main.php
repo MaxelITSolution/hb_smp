@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="<?php echo site_url('product'); ?>">ENG</a></li>
+                            <li><a href="<?php echo site_url('ina/product'); ?>">INA</a></li>
+                            <li><a href="<?php echo site_url('chn/product'); ?>">CHN</a></li>
+                            <li><a href="<?php echo site_url('kor/product'); ?>">KOR</a></li>
+                            <li><a href="<?php echo site_url('rus/product'); ?>">RUS</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -70,7 +77,7 @@
 				<section class="dot-product-2" style="margin-left: 300px;"></section>
 			</h3>
 			<p><?php echo $static_content[21]->value; ?></p>
-			<a href="<?php echo site_url('expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+			<a href="<?php echo site_url($lang_path.'expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 		</div>
 	</div>
 </section>
@@ -110,15 +117,15 @@
         <li class="active"><a href="#">Page</a></li>
 
         <?php if ($current_page > 1 ) { ?>
-        <li><a href="<?php echo site_url('product?page='.($current_page - 1)); ?>"><</a></li>
+        <li><a href="<?php echo site_url($lang_path.'product?page='.($current_page - 1)); ?>"><</a></li>
         <?php } ?>
 
         <?php for ($i=1 ; $i <= $page_count; $i++) { ?>
-        <li><a href="<?php echo site_url('product?page='.$i); ?>"><?php echo $i; ?></a></li>        
+        <li><a href="<?php echo site_url($lang_path.'product?page='.$i); ?>"><?php echo $i; ?></a></li>        
         <?php } ?>
         
         <?php if ($current_page < $page_count) { ?>
-        <li><a href="<?php echo site_url('product?page='.($current_page + 1)); ?>">></a></li>
+        <li><a href="<?php echo site_url($lang_path.'product?page='.($current_page + 1)); ?>">></a></li>
         <?php } ?>
 			</ul>
       <?php } ?>

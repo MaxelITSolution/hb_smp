@@ -20,10 +20,12 @@ class Meta extends AppController {
 		$this->data['page_subtitle'] 	= 'Daftar pengaturan Meta';
 
     
-    $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_title"')->result_array();
-    $this->data['web_title']       = $temp[0]['value_eng'];
-    $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_meta"')->result_array();
-    $this->data['web_meta']       = $temp[0]['value_eng'];
+    $temp = $this->db->query('SELECT * FROM static_contents WHERE page="web_title"')->result_array();
+    $this->data['web_title']       = $temp[0];
+    $temp = $this->db->query('SELECT * FROM static_contents WHERE page="web_meta"')->result_array();
+    $this->data['web_meta']       = $temp[0];
+    
+    $this->data['lang']       = ["eng"=>"English", "ina"=>"Indonesian", "chn"=>"Chinese", "kor"=>"Korean", "rus"=>"Russian"];
     
     
     
@@ -32,11 +34,16 @@ class Meta extends AppController {
 
 	public function action()
 	{
-    $data['value_eng'] = $this->input->post('web_title');
+    $lang       = ["eng"=>"English", "ina"=>"Indonesian", "chn"=>"Chinese", "kor"=>"Korean", "rus"=>"Russian"];
+    foreach($lang as $key => $value) {
+      $data['value_'.$key] = $this->input->post('web_title_'.$key);
+    }
     $this->db->where('page', "web_title");
     $this->db->update('static_contents', $data);
     
-    $data['value_eng'] = $this->input->post('web_meta');
+    foreach($lang as $key => $value) {
+      $data['value_'.$key] = $this->input->post('web_meta_'.$key);
+    }
     $this->db->where('page', "web_meta");
     $this->db->update('static_contents', $data);
     

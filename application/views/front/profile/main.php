@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="<?php echo site_url('profile'); ?>">ENG</a></li>
+                            <li><a href="<?php echo site_url('ina/profile'); ?>">INA</a></li>
+                            <li><a href="<?php echo site_url('chn/profile'); ?>">CHN</a></li>
+                            <li><a href="<?php echo site_url('kor/profile'); ?>">KOR</a></li>
+                            <li><a href="<?php echo site_url('rus/profile'); ?>">RUS</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -66,7 +73,7 @@
 		<div class="col-md-6 box-2">
             <?php echo $static_content[28]->value; ?>
 			<?php echo $static_content[29]->value; ?>
-			<a href="<?php echo site_url('expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+			<a href="<?php echo site_url($lang_path.'expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 		</div>
 	</div>
 </section>

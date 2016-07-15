@@ -33,13 +33,12 @@ class Product extends FrontController {
 	    									   ->limit(8, $this->uri->segment(3))
 	    									   ->get()
 	    									   ->result();
-	    									   ->limit($perpage,$start)
-	    									   ->get()
-	    									   ->result();
+//	    									   ->limit($perpage,$start)
+//	    									   ->get()
+//	    									   ->result();
       $rows = $this->db->count_all('products');
       $this->data['page_count'] = $rows / $perpage + ($rows % $perpage > 0 ? 1 : 0);
       $this->data['current_page'] = $page;
     	$this->load->view('front/components/main_layout', $this->data);
 	}
-
 }

@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="<?php echo site_url('post/category/1'); ?>">ENG</a></li>
+                            <li><a href="<?php echo site_url('ina/post/category/1'); ?>">INA</a></li>
+                            <li><a href="<?php echo site_url('chn/post/category/1'); ?>">CHN</a></li>
+                            <li><a href="<?php echo site_url('kor/post/category/1'); ?>">KOR</a></li>
+                            <li><a href="<?php echo site_url('rus/post/category/1'); ?>">RUS</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -71,8 +78,8 @@
 							$title = 'title_' . $language;
 							$content = 'content_' . $language;
 						?>
-						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><p><?php echo strtoupper($post->$title); ?></p></a>
-						<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url('post/detail/' . $post->slug); ?>">Read more</a></span>
+						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><p><?php echo strtoupper($post->$title); ?></p></a>
+						<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>">Read more</a></span>
 					</div>
 				<?php } ?>
 				<!-- <ul>

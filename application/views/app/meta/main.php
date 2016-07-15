@@ -44,25 +44,32 @@
             <div class="form-group">
               <div id="status_msg" class="alert alert-success" style="display:none">Data telah tersimpan</div>
             </div>
+            
+            <hr class="line-dashed line-full">
+
+            <?php foreach($lang as $key => $value) { ?>
+            <div class="form-group">
+              <label class="col-sm-2"><b><?php echo $value; ?></b></label>
+            </div>
 
             <div class="form-group">
               <label class="col-sm-2 control-label">Title</label>
               <div class="col-sm-9">
-                <input type="text" name="web_title" class="form-control" value="<?php echo $web_title; ?>">
+                <input type="text" name="web_title_<?php echo $key; ?>" class="form-control" value="<?php echo $web_title['value_'.$key]; ?>">
               </div>
             </div>
-
-            <hr class="line-dashed line-full">
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Meta Tags</label>
+              <label class="col-sm-2 control-label">Description</label>
               <div class="col-sm-9">
-                <textarea name="web_meta" class="form-control"><?php echo $web_meta; ?></textarea>
+                <textarea name="web_meta_<?php echo $key; ?>" class="form-control"><?php echo $web_meta['value_'.$key]; ?></textarea>
               </div>
             </div>
 
             <hr class="line-dashed line-full">
 
+            <?php } ?>
+            
             <div class="form-group">
               <div class="col-sm-4 col-sm-offset-2">
                 <button type="button" class="btn btn-success action" title="save" onclick="saveForm();">Save changes</button>

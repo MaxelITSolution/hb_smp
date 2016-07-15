@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="<?php echo site_url('contact'); ?>">ENG</a></li>
+                            <li><a href="<?php echo site_url('ina/contact'); ?>">INA</a></li>
+                            <li><a href="<?php echo site_url('chn/contact'); ?>">CHN</a></li>
+                            <li><a href="<?php echo site_url('kor/contact'); ?>">KOR</a></li>
+                            <li><a href="<?php echo site_url('rus/contact'); ?>">RUS</a></li>
                         </ul>
                     </li>
                 </ul>

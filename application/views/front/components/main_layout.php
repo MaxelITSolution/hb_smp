@@ -3,20 +3,33 @@
     <head>
 <!--        <title><?php echo $title; ?></title>-->
         <?php 
-          $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_title"')->result_array();
-          $web_title       = $temp[0]['value_eng'];
-          $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_meta"')->result_array();
-          $web_meta       = $temp[0]['value_eng'];
+          $temp = $this->db->query('SELECT value_'.$language.' AS value FROM static_contents WHERE page="web_title"')->result_array();
+          $web_title       = $temp[0]['value'];
+          $temp = $this->db->query('SELECT value_'.$language.' AS value FROM static_contents WHERE page="web_meta"')->result_array();
+          $web_meta       = $temp[0]['value'];
           if (substr($web_meta,0,5) != "<meta") {
             $web_meta = "<meta name='description' content='$web_meta' >";
           }
+          switch($language) {
+            case "eng" : { $lang_text = "english"; $lang_code = "en"; break; }
+            case "ina" : { $lang_text = "indonesian"; $lang_code = "id"; break; }
+            case "kor" : { $lang_text = "korean"; $lang_code = "ko"; break; }
+            case "chn" : { $lang_text = "chinese"; $lang_code = "zh"; break; }
+            case "rus" : { $lang_text = "russia"; $lang_code = "ru"; break; }
+          }
         ?>
         <title><?php echo $web_title; ?></title>
+        <?php echo $web_meta; ?>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Language" content="<?php echo $lang_code; ?>">          
+
         <!-- RESPONSIVE META TAG -->
         <meta charset="utf-8"></meta>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?php echo $web_meta; ?>
+        <meta name="language" content="<?php echo $lang_text; ?>">
+
+
         <link rel="shortcut icon" href="assets/front/images/favicon.png" type="image" />
         <link rel="stylesheet" href="assets/front/css/mc/profile.css" type="text/css" />
         <!-- CSS ASSETS -->

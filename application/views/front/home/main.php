@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="./">ENG</a></li>
+                            <li><a href="ina">INA</a></li>
+                            <li><a href="chn">CHN</a></li>
+                            <li><a href="kor">KOR</a></li>
+                            <li><a href="rus">RUS</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -70,7 +77,7 @@
 					<section class="dot-home-2"></section>
 				</h3>
 				<p><?php echo $static_content[8]->value; ?></p>
-				<a href="<?php echo site_url('profile'); ?>"><?php echo $static_content[9]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+				<a href="<?php echo site_url($lang_path.'profile'); ?>"><?php echo $static_content[9]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 			</div>
 		</div>
 	</div>
@@ -126,7 +133,7 @@
 			</div>
 			<div class="col-md-6 box-2">
 				<?php foreach ($products as $key => $product) { ?>
-					<a class="single_image" href="<?php echo site_url('product?detail=' . $product->id); ?>#product-section">
+					<a class="single_image" href="<?php echo site_url($lang_path.'product?detail=' . $product->id); ?>#product-section">
 						<div class="col-md-4 col-sm-6">
 							<img src="<?php echo site_url('uploads/' . $product->image_name); ?>">
 							<?php
@@ -154,7 +161,7 @@
 							<div class="date"><?php echo strtoupper(date("d", strtotime($post->created_at))); ?></div>
 							<div class="month-year"><?php echo strtoupper(date("F Y", strtotime($post->created_at))); ?></div>
 						</div>
-						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>" class="title-link">
+						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>" class="title-link">
 							<p>
 								<?php
 									$title = 'title_' . $language;
@@ -166,44 +173,44 @@
                             $cat = strtoupper($post->category_name);
                             if ($cat=="NEWS"){
                                 if ($language=="rus"){ ?>
-						                <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ Новости ]</span></a>
+						                <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ Новости ]</span></a>
                                 <?php } else if ($language=="eng"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ NEWS ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ NEWS ]</span></a>
                                 <?php } else if ($language=="ina"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ BERITA ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ BERITA ]</span></a>
                                 <?php } else if ($language=="chn"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 消息 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 消息 ]</span></a>
                                 <?php } else if ($language=="kor"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 뉴스 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 뉴스 ]</span></a>
                                 <?php }
                             } else if ($cat=="EVENTS"){
                                 if ($language=="rus"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ событие ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ событие ]</span></a>
                                 <?php } else if ($language=="eng"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ EVENTS ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ EVENTS ]</span></a>
                                 <?php } else if ($language=="ina"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ EVENT ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ EVENT ]</span></a>
                                 <?php } else if ($language=="chn"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 事件 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 事件 ]</span></a>
                                 <?php } else if ($language=="kor"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 이벤트 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 이벤트 ]</span></a>
                                 <?php }
                             } else if ($cat=="ARTICLES"){
                                 if ($language=="rus"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ Статьи ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ Статьи ]</span></a>
                                 <?php } else if ($language=="eng"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ ARTICLES ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ ARTICLES ]</span></a>
                                 <?php } else if ($language=="ina"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ ARTIKEL ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ ARTIKEL ]</span></a>
                                 <?php } else if ($language=="chn"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 文章 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 文章 ]</span></a>
                                 <?php } else if ($language=="kor"){ ?>
-                                        <a href="<?php echo site_url('post/category/' . $post->category_id); ?>"><span class="category">[ 기사 ]</span></a>
+                                        <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><span class="category">[ 기사 ]</span></a>
                                 <?php }
                             }
                          ?>
 						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
-						<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 					</div>
 				<?php } ?>
 			</div>

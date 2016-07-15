@@ -41,6 +41,34 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['chn'] = 'home/lang/chn';
+$route['kor'] = 'home/lang/kor';
+$route['ina'] = 'home/lang/ina';
+$route['rus'] = 'home/lang/rus';
+
+$route['chn/(:any)/(:any)/(:any)'] = '$1/lang/chn/$2/$3';
+$route['kor/(:any)/(:any)/(:any)'] = '$1/lang/kor/$2/$3';
+$route['ina/(:any)/(:any)/(:any)'] = '$1/lang/ina/$2/$3';
+$route['rus/(:any)/(:any)/(:any)'] = '$1/lang/rus/$2/$3';
+
+$route['chn/(:any)/(:any)'] = '$1/lang/chn/$2';
+$route['kor/(:any)/(:any)'] = '$1/lang/kor/$2';
+$route['ina/(:any)/(:any)'] = '$1/lang/ina/$2';
+$route['rus/(:any)/(:any)'] = '$1/lang/rus/$2';
+
+$route['chn/(:any)'] = '$1/lang/chn';
+$route['kor/(:any)'] = '$1/lang/kor';
+$route['ina/(:any)'] = '$1/lang/ina';
+$route['rus/(:any)'] = '$1/lang/rus';
+
+/*/
+$route['(:any)/product'] = 'product/lang/$1';
+$route['(:any)/profile'] = 'profile/lang/$1';
+$route['(:any)/expertise'] = 'expertise/lang/$1';
+$route['(:any)/news'] = 'news/lang/$1';
+$route['(:any)/contact'] = 'contact/lang/$1';
+/*/
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

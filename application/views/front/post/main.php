@@ -12,11 +12,18 @@
                     <li>
                         <?php echo strtoupper($language); ?> <i class="fa fa-angle-down"></i></a>
                         <ul>
+<!--                        
                             <li><a data-value="eng" href="javascript:;">ENG</a></li>
                             <li><a data-value="ina" href="javascript:;">INA</a></li>
                             <li><a data-value="chn" href="javascript:;">CHN</a></li>
                             <li><a data-value="kor" href="javascript:;">KOR</a></li>
                             <li><a data-value="rus" href="javascript:;">RUS</a></li>
+-->
+                            <li><a href="<?php echo site_url('post/category/1'); ?>">ENG</a></li>
+                            <li><a href="<?php echo site_url('ina/post/category/1'); ?>">INA</a></li>
+                            <li><a href="<?php echo site_url('chn/post/category/1'); ?>">CHN</a></li>
+                            <li><a href="<?php echo site_url('kor/post/category/1'); ?>">KOR</a></li>
+                            <li><a href="<?php echo site_url('rus/post/category/1'); ?>">RUS</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -68,7 +75,7 @@
 				<section class="dot-news-2"></section>
 				<span><?php echo $static_content[92]->value; ?></span>
 			</h3>
-			<a href="<?php echo site_url('post/category/1'); ?>">
+			<a href="<?php echo site_url($lang_path.'post/category/1'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding news <?php echo $category == 1 ? 'active-news' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-1.png'); ?>">
                     <?php
@@ -84,7 +91,7 @@
                      ?>
 				</div>
 			</a>
-			<a href="<?php echo site_url('post/category/2'); ?>">
+			<a href="<?php echo site_url($lang_path.'post/category/2'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding events <?php echo $category == 2 ? 'active-events' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-2.png'); ?>">
                     <?php
@@ -100,7 +107,7 @@
                      ?>
 				</div>
 			</a>
-			<a href="<?php echo site_url('post/category/3'); ?>">
+			<a href="<?php echo site_url($lang_path.'post/category/3'); ?>">
 				<div class="col-md-10 col-sm-4 no-padding articles <?php echo $category == 3 ? 'active-articles' : '' ?>">
 					<img src="<?php echo site_url('assets/front/images/content/SMP-categories-3.png'); ?>">
                     <?php
@@ -128,8 +135,8 @@
 						$title = 'title_' . $language;
 						$content = 'content_' . $language;
 					?>
-					<a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><p><?php echo strtoupper($post->$title); ?></p></a>
-					<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url('post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?></a></span>
+					<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><p><?php echo strtoupper($post->$title); ?></p></a>
+					<span><?php echo substr(strip_tags($post->$content), 0, 450); ?> <a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?></a></span>
 				</div>
 			<?php } ?>
 			<!-- <ul>
