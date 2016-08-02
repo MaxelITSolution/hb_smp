@@ -48,10 +48,14 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'maxel.id';
-$db['default']['username'] = 'maxelid_HB_SMP';
-$db['default']['password'] = 'i4I{OZLEewQB';
-$db['default']['database'] = 'maxelid_HB_SMP';
+//$db['default']['hostname'] = 'maxel.id';
+//$db['default']['username'] = 'maxelid_HB_SMP';
+//$db['default']['password'] = 'i4I{OZLEewQB';
+//$db['default']['database'] = 'maxelid_HB_SMP';
+$db['default']['hostname'] = 'sarimas.com';
+$db['default']['username'] = 'u10639flp_smp';
+$db['default']['password'] = 'sarimaspermai';
+$db['default']['database'] = 'u10639flp_smp';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

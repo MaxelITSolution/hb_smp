@@ -36,8 +36,10 @@
 					</ul>
 
 					<div class="tab-content">
+
 						<script type="text/javascript" src='<?php echo base_url(); ?>assets/tinymce/tinymce.min.js'></script>
 						<script>tinymce.init({selector: 'textarea'});</script>
+
 						<div id="eng" class="tab-pane fade in active">
 							<div class="form-group">
 								<div class="col-sm-12">
@@ -53,7 +55,10 @@
 									<textarea name="content_eng" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
 									<div class="validation-message" data-field="content_eng"></div>
 								</div>
+
 							</div>
+							</div>
+
 						</div>
 						<div id="ina" class="tab-pane fade">
 							<div class="form-group">
@@ -67,7 +72,11 @@
 
 							<div class="form-group">
 								<div class="col-sm-12">
+
 									<textarea id="ta_ina" name="content_ina" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+
+									<textarea name="content_ina" class="form-control" class="redactor" style="height: 500px;" placeholder="Content..."></textarea>
+
 									<div class="validation-message" data-field="content_ina"></div>
 								</div>
 							</div>
@@ -213,7 +222,11 @@
 		}
 
 		$('.redactor').each(function() {
+
 			$(this).redactor({
+
+			$(this).redactor({
+
 				imageUpload: "<?php echo site_url('app/post/redactorupload'); ?>",
 				imageDeleteCallback: function(url) {
 					var arrUrl = url.split('/');

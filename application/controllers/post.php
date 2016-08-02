@@ -20,7 +20,7 @@ class Post extends FrontController {
 	    									   ->from('posts as p')
 	    									   ->join('categories as c', 'c.id = p.category_id')
 	    									   ->where('category_id', $category)
-	    									   ->limit(4)
+	    									   // ->limit(4)
 	    									   ->get()
 	    									   ->result();
     	$this->load->view('front/components/main_layout', $this->data);

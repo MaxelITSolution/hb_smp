@@ -75,7 +75,11 @@
 		pageInfoElement 		: '#info',
 		columns					: [
         	{field: 'title_eng', title: 'Title', editable: true, sortable: true, width: 650, align: 'left', search: true},
+
         	{field: 'menu', title: 'Menu', sortable: false, width: 200, align: 'center', search: false,
+
+        	{field: 'menu', title: 'Menu', sortable: false, width: 200, align: 'center', search: false,
+
         		rowStyler: function(rowData, rowIndex) {
         			return menu(rowData, rowIndex);
         		}

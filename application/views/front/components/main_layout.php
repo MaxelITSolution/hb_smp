@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html class="app">
     <head>
-        <title><?php echo $title; ?></title>
+<!--        <title><?php echo $title; ?></title>-->
+        <?php 
+          $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_title"')->result_array();
+          $web_title       = $temp[0]['value_eng'];
+          $temp = $this->db->query('SELECT value_eng FROM static_contents WHERE page="web_meta"')->result_array();
+          $web_meta       = $temp[0]['value_eng'];
+          if (substr($web_meta,0,5) != "<meta") {
+            $web_meta = "<meta name='description' content='$web_meta' >";
+          }
+        ?>
+        <title><?php echo $web_title; ?></title>
         <!-- RESPONSIVE META TAG -->
         <meta charset="utf-8"></meta>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php echo $web_meta; ?>
+        <link rel="shortcut icon" href="assets/front/images/favicon.png" type="image" />
         <link rel="stylesheet" href="assets/front/css/mc/profile.css" type="text/css" />
         <!-- CSS ASSETS -->
         <?php foreach ($css_assets as $key => $value) { ?>

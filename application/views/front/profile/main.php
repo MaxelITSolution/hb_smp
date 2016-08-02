@@ -63,7 +63,7 @@
 			<a target="blank" href="<?php echo $static_content[52]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/twitter2.png'); ?>"></a>
 			<a target="blank" href="<?php echo $static_content[53]->value; ?>"><img class="social-media" src="<?php echo site_url('assets/front/images/linkedin2.png'); ?>"></a>
 		</div>
-		<div class="col-md-6 box-2" id="our_story">
+		<div class="col-md-6 box-2">
             <?php echo $static_content[28]->value; ?>
 			<?php echo $static_content[29]->value; ?>
 			<a href="<?php echo site_url('expertise'); ?>"><?php echo $static_content[91]->value; ?> <span class="arrow"><i class="fa fa-angle-right"></i></span></a>

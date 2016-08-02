@@ -294,7 +294,7 @@ nav .menu.active:hover {
 .section-1 .box-1 h1 {
 	font-weight: bolder;
 	line-height: 130%;
-	font-size: 45px;
+	font-size: 6.5vh;
 }
 .section-1 .box-1 .text-right {
 	font-weight: bold;
@@ -1756,6 +1756,9 @@ nav .menu.active:hover {
 	#arrow_left{
 		margin-left: 45px;
 	}
+  .slide .slide-profile {
+    width: 80%;
+  }
 }
 @media (max-width: 600px) {
 	#slider_caption_box{
@@ -1853,4 +1856,5 @@ nav .menu.active:hover {
 	#expertise_content_title{
 		margin-left: -30px;
 	}
+
 }

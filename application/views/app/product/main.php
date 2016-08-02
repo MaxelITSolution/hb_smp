@@ -74,7 +74,7 @@
 		optionPagingElement 	: '#option',
 		pageInfoElement 		: '#info',
 		columns					: [
-        	{field: 'name', title: 'Name', editable: true, sortable: true, width: 650, align: 'left', search: true},
+        	{field: 'name_eng', title: 'Name', editable: true, sortable: true, width: 650, align: 'left', search: true},
         	{field: 'menu', title: 'Menu', sortable: false, width: 200, align: 'center', search: false, 
         		rowStyler: function(rowData, rowIndex) {
         			return menu(rowData, rowIndex);
