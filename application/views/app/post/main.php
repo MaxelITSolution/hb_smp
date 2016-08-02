@@ -65,17 +65,17 @@
 <script type="text/javascript">
 	var datagrid = $("#datagrid").datagrid({
 		url						: "<?php echo site_url('app/post/data'); ?>",
-		primaryField			: 'id', 
+		primaryField			: 'id',
 		rowNumber				: true,
 		itemsPerPage			: 10,
-		searchInputElement 		: '#search', 
-		searchFieldElement 		: '#search-option', 
-		pagingElement 			: '#paging', 
-		optionPagingElement 	: '#option', 
+		searchInputElement 		: '#search',
+		searchFieldElement 		: '#search-option',
+		pagingElement 			: '#paging',
+		optionPagingElement 	: '#option',
 		pageInfoElement 		: '#info',
 		columns					: [
-        	{field: 'title', title: 'Title', editable: true, sortable: true, width: 650, align: 'left', search: true},
-        	{field: 'menu', title: 'Menu', sortable: false, width: 200, align: 'center', search: false, 
+        	{field: 'title_eng', title: 'Title', editable: true, sortable: true, width: 650, align: 'left', search: true},
+        	{field: 'menu', title: 'Menu', sortable: false, width: 200, align: 'center', search: false,
         		rowStyler: function(rowData, rowIndex) {
         			return menu(rowData, rowIndex);
         		}
@@ -101,15 +101,15 @@
 	}
 
 	function delete_action(rowIndex) {
-		swal({   
-			title: "Apakah anda yakin ingin menghapus data ini?",   
+		swal({
+			title: "Apakah anda yakin ingin menghapus data ini?",
 			text: "Data yang telah dihapus tidak dapat dikembalikan!",
 			type: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#DD6B55",
 			cancelButtonText: "Batal",
 			confirmButtonText: "Hapus",
-			closeOnConfirm: true 
+			closeOnConfirm: true
 		}, function() {
 			var row = datagrid.getRowData(rowIndex);
 			$.post("<?php echo site_url('app/post/delete'); ?>", {id : row['id']}).done(function(data) {

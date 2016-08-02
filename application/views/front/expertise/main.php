@@ -93,7 +93,7 @@
 			<section class="dot-expertise-4"></section>
 		</div>
 		<div class="col-md-4 box-1">
-			<h3><?php echo $static_content[44]->value; ?></h3>
+			<h3 id="expertise_content_title"><?php echo $static_content[44]->value; ?></h3>
 		</div>
 		<div class="col-md-7 box-2"><?php echo $static_content[45]->value; ?></div>
 	</div>

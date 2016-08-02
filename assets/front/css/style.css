@@ -1850,4 +1850,7 @@ nav .menu.active:hover {
 		margin-left: -10px;
 		margin-top: -1000px !important;
 	}
+	#expertise_content_title{
+		margin-left: -30px;
+	}
 }

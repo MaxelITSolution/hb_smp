@@ -2,6 +2,7 @@
 <html class="app">
     <head>
         <title><?php echo $title; ?></title>
+
         <!-- RESPONSIVE META TAG -->
         <meta charset="utf-8"></meta>
         <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
