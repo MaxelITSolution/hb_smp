@@ -37,9 +37,6 @@
 
 					<div class="tab-content">
 
-						<script type="text/javascript" src='<?php echo base_url(); ?>assets/tinymce/tinymce.min.js'></script>
-						<script>tinymce.init({selector: 'textarea'});</script>
-
 						<div id="eng" class="tab-pane fade in active">
 							<div class="form-group">
 								<div class="col-sm-12">
