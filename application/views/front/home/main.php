@@ -209,7 +209,7 @@
                                 <?php }
                             }
                          ?>
-						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
+						<img src="<?php echo site_url('uploads/' . $post->image_name) . "?" . rand(0,999); ?>">
 						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 					</div>
 				<?php } ?>

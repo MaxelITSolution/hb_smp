@@ -69,27 +69,27 @@ class Post extends AppController {
 			'content_eng' => [
 				'field' => 'content_eng',
 				'label' => 'Content Eng',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_ina' => [
 				'field' => 'content_ina',
 				'label' => 'Content Ina',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_chn' => [
 				'field' => 'content_chn',
 				'label' => 'Content Chn',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_kor' => [
 				'field' => 'content_kor',
 				'label' => 'Content Kor',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_rus' => [
 				'field' => 'content_rus',
 				'label' => 'Content Rus',
-				'rules' => 'trim|required|xss_clean|is_unique[posts.title_eng]'
+				'rules' => 'trim|required|is_unique[posts.title_eng]'
 			],
 			'title_ina' => [
 				'field' => 'title_ina',
@@ -114,27 +114,27 @@ class Post extends AppController {
 			'content_eng' => [
 				'field' => 'content_eng',
 				'label' => 'Content Eng',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_ina' => [
 				'field' => 'content_ina',
 				'label' => 'Content Ina',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_chn' => [
 				'field' => 'content_chn',
 				'label' => 'Content Chn',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_kor' => [
 				'field' => 'content_kor',
 				'label' => 'Content Kor',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_rus' => [
 				'field' => 'content_rus',
 				'label' => 'Content Rus',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			]
 		];
 
