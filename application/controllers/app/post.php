@@ -42,7 +42,6 @@ class Post extends AppController {
 				'rules' => 'trim|required|xss_clean'
 			],
 			'title_eng' => [
-<<<<<<< HEAD
 				'field' => 'title_eng',
 				'label' => 'Title Eng',
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_eng]'
@@ -90,55 +89,51 @@ class Post extends AppController {
 			'content_rus' => [
 				'field' => 'content_rus',
 				'label' => 'Content Rus',
-=======
-				'field' => 'title_eng', 
-				'label' => 'Title Eng', 
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_eng]'
 			],
 			'title_ina' => [
-				'field' => 'title_ina', 
-				'label' => 'Title Ina', 
+				'field' => 'title_ina',
+				'label' => 'Title Ina',
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_ina]'
 			],
 			'title_chn' => [
-				'field' => 'title_chn', 
-				'label' => 'Title Chn', 
+				'field' => 'title_chn',
+				'label' => 'Title Chn',
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_chn]'
 			],
 			'title_kor' => [
-				'field' => 'title_kor', 
-				'label' => 'Title Kor', 
+				'field' => 'title_kor',
+				'label' => 'Title Kor',
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_kor]'
 			],
 			'title_rus' => [
-				'field' => 'title_rus', 
-				'label' => 'Title Rus', 
+				'field' => 'title_rus',
+				'label' => 'Title Rus',
 				'rules' => 'trim|required|xss_clean|is_unique[posts.title_rus]'
 			],
 			'content_eng' => [
-				'field' => 'content_eng', 
-				'label' => 'Content Eng', 
+				'field' => 'content_eng',
+				'label' => 'Content Eng',
 				'rules' => 'trim|required|xss_clean'
 			],
 			'content_ina' => [
-				'field' => 'content_ina', 
-				'label' => 'Content Ina', 
+				'field' => 'content_ina',
+				'label' => 'Content Ina',
 				'rules' => 'trim|required|xss_clean'
 			],
 			'content_chn' => [
-				'field' => 'content_chn', 
-				'label' => 'Content Chn', 
+				'field' => 'content_chn',
+				'label' => 'Content Chn',
 				'rules' => 'trim|required|xss_clean'
 			],
 			'content_kor' => [
-				'field' => 'content_kor', 
-				'label' => 'Content Kor', 
+				'field' => 'content_kor',
+				'label' => 'Content Kor',
 				'rules' => 'trim|required|xss_clean'
 			],
 			'content_rus' => [
-				'field' => 'content_rus', 
-				'label' => 'Content Rus', 
->>>>>>> origin/master
+				'field' => 'content_rus',
+				'label' => 'Content Rus',
 				'rules' => 'trim|required|xss_clean'
 			]
 		];
