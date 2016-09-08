@@ -170,8 +170,8 @@
                     <?php }
                 }
              ?>
-      <div style="text-align: center;">
-			  <img src="<?php echo site_url('uploads/' . $post->image_name . "?" . rand(0,999)); ?>" style="margin: 25px auto 0px;">
+      <div style="text-align: center; height:400px;">
+			  <img src="<?php echo site_url('uploads/' . $post->image_name . "?" . rand(0,999)); ?>" style="margin: 25px auto 0px; height:100%; width:100%; object-fit: contain">
       </div>
 			<p><?php echo nl2br($post->$content); ?></p>
             <?php if ($language=="rus"){?>
