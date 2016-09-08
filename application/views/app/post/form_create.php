@@ -200,7 +200,7 @@
 	var onLoad = (function() {
 		var fileUpload = $("#wp-uploader").uploader({
 							filePreview : '#wp-preview',
-							arrFileType : ["image/png", "image/jpeg", "image/jpg"]
+							arrFileType : ["image/png", "image/jpeg"]
 						});
 
 		var index = "<?php echo $index; ?>";

@@ -176,7 +176,7 @@ class Post extends AppController {
 		$data['content_chn'] 	= $this->input->post('content_chn');
 		$data['content_kor'] 	= $this->input->post('content_kor');
 		$data['content_rus'] 	= $this->input->post('content_rus');
-		$data['image_name'] 	= $this->input->post('image_name');
+		$data['image_name'] 	= "image_1.jpg";//$this->input->post('image_name');
 		$data['created_at'] 	= date('Y-m-d H:i:s');
 		$this->db->insert('posts', $data);
 

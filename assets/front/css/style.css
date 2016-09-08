@@ -1238,6 +1238,15 @@ nav .menu.active:hover {
 	height: 22px;
 }
 
+#home_title_new_product{
+	min-height: 120px;
+}
+
+#home_new_product_image{
+	margin-bottom: 20px;
+}
+
+
 @font-face {
     font-family: Gotham-Light;
     src: url(../fonts/gotham/Gotham-Light.otf);

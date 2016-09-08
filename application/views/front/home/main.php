@@ -162,7 +162,7 @@
 							<div class="month-year"><?php echo strtoupper(date("F Y", strtotime($post->created_at))); ?></div>
 						</div>
 						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>" class="title-link">
-							<p>
+							<p id="home_title_new_product">
 								<?php
 									$title = 'title_' . $language;
 									echo strtoupper($post->$title);
@@ -209,8 +209,8 @@
                                 <?php }
                             }
                          ?>
-						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
-						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
+						<img src="<?php echo site_url('uploads/' . $post->image_name); ?>" id="home_new_product_image">
+						<a href="<?php echo site_url($lang_path.'post/detail/' . $post->slug); ?>" id="for_read_me"><?php echo $static_content[90]->value; ?> &nbsp;<span class="arrow"><i class="fa fa-angle-right"></i></span></a>
 					</div>
 				<?php } ?>
 			</div>
