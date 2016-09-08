@@ -177,7 +177,7 @@ class Product extends AppController {
 	{
 		$config['upload_path'] 		= realpath(APPPATH . '../uploads');
 		$config['allowed_types'] 	= 'gif|jpg|png';
-		$config['max_size']			= '1000';
+		$config['max_size']			= '100000';
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('images');
 

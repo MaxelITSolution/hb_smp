@@ -69,27 +69,27 @@ class Post extends AppController {
 			'content_eng' => [
 				'field' => 'content_eng',
 				'label' => 'Content Eng',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_ina' => [
 				'field' => 'content_ina',
 				'label' => 'Content Ina',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_chn' => [
 				'field' => 'content_chn',
 				'label' => 'Content Chn',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_kor' => [
 				'field' => 'content_kor',
 				'label' => 'Content Kor',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_rus' => [
 				'field' => 'content_rus',
 				'label' => 'Content Rus',
-				'rules' => 'trim|required|xss_clean|is_unique[posts.title_eng]'
+				'rules' => 'trim|required|is_unique[posts.title_eng]'
 			],
 			'title_ina' => [
 				'field' => 'title_ina',
@@ -114,27 +114,27 @@ class Post extends AppController {
 			'content_eng' => [
 				'field' => 'content_eng',
 				'label' => 'Content Eng',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_ina' => [
 				'field' => 'content_ina',
 				'label' => 'Content Ina',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_chn' => [
 				'field' => 'content_chn',
 				'label' => 'Content Chn',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_kor' => [
 				'field' => 'content_kor',
 				'label' => 'Content Kor',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			],
 			'content_rus' => [
 				'field' => 'content_rus',
 				'label' => 'Content Rus',
-				'rules' => 'trim|required|xss_clean'
+				'rules' => 'trim|required'
 			]
 		];
 
@@ -186,26 +186,27 @@ class Post extends AppController {
 
 	public function update()
 	{
-		$images = json_decode($this->input->post('deleted_files'));
-		if (!empty($images)) {
-			$file_path = realpath(APPPATH . '../uploads') . '/' . $images[0];
-			if (file_exists($file_path)) {
-				unlink($file_path);
-			}
-		}
-
-		$data['category_id'] 	= $this->input->post('category_id');
-		$data['slug'] 			= $this->helper->sluggable($this->input->post('title_eng'));
-		$data['title_eng'] 		= $this->input->post('title_eng');
-		$data['title_ina'] 		= $this->input->post('title_ina');
-		$data['title_chn'] 		= $this->input->post('title_chn');
-		$data['title_kor'] 		= $this->input->post('title_kor');
-		$data['title_rus'] 		= $this->input->post('title_rus');
-		$data['content_eng'] 	= $this->input->post('content_eng');
-		$data['content_ina'] 	= $this->input->post('content_ina');
-		$data['content_chn'] 	= $this->input->post('content_chn');
-		$data['content_kor'] 	= $this->input->post('content_kor');
-		$data['content_rus'] 	= $this->input->post('content_rus');
+    $data['category_id']   = $this->input->post('category_id');
+    $data['slug']       = $this->helper->sluggable($this->input->post('title_eng'));
+    $data['title_eng']     = $this->input->post('title_eng');
+    $data['title_ina']     = $this->input->post('title_ina');
+    $data['title_chn']     = $this->input->post('title_chn');
+    $data['title_kor']     = $this->input->post('title_kor');
+    $data['title_rus']     = $this->input->post('title_rus');
+    $data['content_eng']   = $this->input->post('content_eng');
+    $data['content_ina']   = $this->input->post('content_ina');
+    $data['content_chn']   = $this->input->post('content_chn');
+    $data['content_kor']   = $this->input->post('content_kor');
+    $data['content_rus']   = $this->input->post('content_rus');
+    
+    $images = json_decode($this->input->post('deleted_files'));
+    if (!empty($images) && $images[0] != "") {
+      $file_path = realpath(APPPATH . '../uploads') . '/' . $images[0];
+      if (file_exists($file_path)) {
+        unlink($file_path);
+      }
+      $data['image_name'] = "";
+    }
 		if ($this->input->post('image_name')) {
 			$data['image_name'] = $this->input->post('image_name');
 		}
@@ -232,7 +233,7 @@ class Post extends AppController {
 	{
 		$config['upload_path'] 		= realpath(APPPATH . '../uploads');
 		$config['allowed_types'] 	= 'gif|jpg|png';
-		$config['max_size']			= '1000';
+		$config['max_size']			= '100000';
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('images');
 

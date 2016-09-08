@@ -196,6 +196,8 @@
 	</div>
 </div>
 
+<script type="text/javascript" src="<?php echo base_url("assets/tinymce/tinymce.min.js");?>"></script>
+<script type="text/javascript">tinymce.init({selector:'textarea'});</script>
 <script type="text/javascript">
 	var onLoad = (function() {
 		var fileUpload = $("#wp-uploader").uploader({
@@ -315,6 +317,7 @@
 
 	function form_routes(action) {
 		if (action == 'save') {
+      tinyMCE.triggerSave();
 			var formData = $('#form-action').serialize();
 			if (validate(formData) == 'success') {
 				swal({

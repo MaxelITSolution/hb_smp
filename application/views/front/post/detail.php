@@ -170,7 +170,9 @@
                     <?php }
                 }
              ?>
-			<img src="<?php echo site_url('uploads/' . $post->image_name); ?>">
+      <div style="text-align: center; height:400px;">
+			  <img src="<?php echo site_url('uploads/' . $post->image_name . "?" . rand(0,999)); ?>" style="margin: 25px auto 0px; height:100%; width:100%; object-fit: contain">
+      </div>
 			<p><?php echo nl2br($post->$content); ?></p>
             <?php if ($language=="rus"){?>
        	            <a href="<?php echo site_url($lang_path.'post/category/' . $post->category_id); ?>"><p class="back-link text-right" style="font-family: Arial;">< <?php echo $static_content[98]->value; ?></p></a>
